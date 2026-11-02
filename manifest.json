@@ -1,0 +1,12 @@
+
+{
+  "name": "TechVibe Cooling Solutions",
+  "short_name": "TechVibe",
+  "description": "AC Repair, Installation, Cleaning and Maintenance across Colombo.",
+  "start_url": "/TechVibe-Cooling--Solutions-/",
+  "scope": "/TechVibe-Cooling--Solutions-/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#04152f",
+  "theme_color": "#04152f"
+}
