@@ -1,406 +1,693 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TechVibe Cooling Solutions | AC Repair & Installation</title>
+<title>TechVibe Cooling Solutions | AC Repair & Installation Colombo</title>
 
-<meta name="description" content="TechVibe Cooling Solutions provides AC repair, installation, cleaning, gas refill and maintenance services in Colombo 5 and Narahenpita, Sri Lanka.">
+<meta name="description" content="TechVibe Cooling Solutions provides professional AC repair, installation, cleaning, gas refill and maintenance services in Narahenpita, Colombo 5, Sri Lanka.">
+
+<meta name="theme-color" content="#071426">
 
 <style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: Arial, sans-serif;
   background: #071426;
-  color: white;
+  color: #fff;
   line-height: 1.6;
 }
 
-header {
-  background: #0b1e35;
-  padding: 18px 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  border-bottom: 1px solid #183b5e;
+:root {
+  --blue: #168cff;
+  --orange: #ff8b32;
+  --navy: #071426;
+  --card: #10243d;
 }
 
-.logo {
-  font-size: 21px;
-  font-weight: bold;
-  color: #54c8ff;
-}
-
-nav a {
-  color: white;
+a {
   text-decoration: none;
-  margin: 8px;
-  font-size: 14px;
+  color: inherit;
 }
+
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+/* NAVIGATION */
+
+header {
+  background: rgba(5, 17, 34, .96);
+  border-bottom: 1px solid #183451;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav {
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.brand img {
+  width: 53px;
+  height: 53px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.brand-name {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.brand-name span {
+  color: var(--orange);
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+  font-size: 13px;
+}
+
+nav a:hover {
+  color: var(--orange);
+}
+
+/* HERO */
 
 .hero {
-  padding: 90px 7%;
-  text-align: center;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
   background:
-    radial-gradient(ellipse at top, #124c82, transparent 65%),
-    linear-gradient(135deg, #071426, #102f50);
+    radial-gradient(ellipse at 85% 45%, #104b80 0%, transparent 45%),
+    linear-gradient(120deg, #061326, #0b2948 65%, #102c45);
+  overflow: hidden;
+  position: relative;
 }
 
-.badge {
+.hero-content {
+  padding: 90px 0;
+  max-width: 700px;
+}
+
+.tag {
   display: inline-block;
-  border: 1px solid #54c8ff;
+  color: #ffad66;
+  border: 1px solid #ff8b3266;
+  background: #ff8b3215;
+  padding: 7px 15px;
   border-radius: 30px;
-  padding: 7px 16px;
-  color: #8de0ff;
+  font-size: 12px;
   margin-bottom: 22px;
 }
 
 .hero h1 {
-  font-size: clamp(34px, 7vw, 60px);
-  line-height: 1.15;
-  margin-bottom: 20px;
+  font-size: clamp(45px, 9vw, 82px);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -2px;
 }
 
 .hero h1 span {
-  color: #54c8ff;
+  color: var(--blue);
+  text-shadow: 0 0 30px #168cff66;
+}
+
+.hero h2 {
+  color: var(--orange);
+  font-size: clamp(18px, 4vw, 27px);
+  margin-top: 12px;
 }
 
 .hero p {
-  color: #c8d8e9;
-  max-width: 650px;
-  margin: 0 auto 28px;
+  color: #bdcfe1;
+  margin: 22px 0 30px;
+  max-width: 520px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
 }
 
 .btn {
   display: inline-block;
   padding: 13px 22px;
   border-radius: 9px;
-  text-decoration: none;
   font-weight: bold;
-  margin: 6px;
+  font-size: 14px;
+  transition: .3s;
 }
 
-.primary {
-  background: linear-gradient(135deg, #20baff, #0873db);
-  color: white;
-  box-shadow: 0 6px 22px #0788ff40;
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px #168cff44;
 }
 
-.secondary {
-  border: 1px solid #54c8ff;
-  color: #8de0ff;
+.btn-blue {
+  background: linear-gradient(120deg, #0879ef, #24aaff);
 }
+
+.btn-orange {
+  background: linear-gradient(120deg, #f47a21, #ffad4d);
+  color: #151515;
+}
+
+/* SECTION */
 
 section {
-  padding: 65px 7%;
+  padding: 75px 0;
 }
 
 .section-title {
   text-align: center;
-  font-size: 32px;
-  margin-bottom: 12px;
+  margin-bottom: 42px;
 }
 
-.section-desc {
-  text-align: center;
-  color: #b7c8db;
-  margin-bottom: 35px;
+.section-title h2 {
+  font-size: clamp(27px, 5vw, 38px);
 }
+
+.section-title h2 span {
+  color: var(--orange);
+}
+
+.section-title p {
+  color: #a9bfd4;
+  margin-top: 10px;
+}
+
+/* SERVICES */
 
 .services {
+  background: #091a2d;
+}
+
+.service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.card {
-  background: linear-gradient(145deg, #122b47, #0b1b30);
-  padding: 26px;
-  border: 1px solid #244766;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px #00000020;
+.service-card {
+  background: linear-gradient(145deg, #142e4b, #0b1b30);
+  border: 1px solid #245078;
+  border-radius: 17px;
+  padding: 27px 23px;
+  transition: .3s;
 }
 
-.card .icon {
-  font-size: 36px;
-  margin-bottom: 12px;
+.service-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--orange);
+  box-shadow: 0 12px 35px #0879ef20;
 }
 
-.card h3 {
-  color: #70d6ff;
-  margin-bottom: 10px;
+.service-icon {
+  font-size: 37px;
+  margin-bottom: 15px;
 }
 
-.card p {
-  color: #c2d1e1;
-  font-size: 15px;
+.service-card h3 {
+  font-size: 19px;
+  margin-bottom: 9px;
+  color: #fff;
 }
 
-.about {
-  background: #0b1b2e;
+.service-card p {
+  font-size: 14px;
+  color: #adc1d5;
 }
 
-.about-box {
-  max-width: 850px;
-  margin: auto;
-  text-align: center;
+/* WHY US */
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
 }
 
-.about-box p {
-  color: #c2d1e1;
-  margin-top: 15px;
+.why-item {
+  padding: 20px;
+  border-radius: 12px;
+  background: #10243b;
+  border-left: 3px solid var(--orange);
 }
+
+.why-item h3 {
+  color: #58b3ff;
+  margin-bottom: 5px;
+}
+
+/* CONTACT */
 
 .contact {
-  text-align: center;
-  background: linear-gradient(145deg, #10385c, #071426);
+  background:
+    radial-gradient(ellipse at 80% 20%, #123d60, transparent 55%),
+    #081629;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
 }
 
 .contact-box {
-  max-width: 650px;
-  margin: auto;
-  padding: 30px;
-  border: 1px solid #2c648d;
-  border-radius: 18px;
-  background: #0a1b30;
+  background: #10243b;
+  border: 1px solid #244768;
+  padding: 27px;
+  border-radius: 16px;
 }
 
 .contact-box p {
-  margin: 12px 0;
+  color: #c0d0e1;
+  margin: 13px 0;
   overflow-wrap: anywhere;
 }
 
+.contact-box strong {
+  color: var(--orange);
+}
+
+/* BOOKING FORM */
+
+form {
+  display: grid;
+  gap: 13px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  background: #08182b;
+  color: #fff;
+  border: 1px solid #31516f;
+  border-radius: 8px;
+  font: inherit;
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--blue);
+}
+
+textarea {
+  min-height: 105px;
+  resize: vertical;
+}
+
+form button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* FOOTER */
+
 footer {
-  padding: 25px 7%;
+  background: #040d19;
+  padding: 30px 0;
   text-align: center;
-  background: #050d18;
-  color: #a9bdcf;
+  color: #9cb1c5;
   font-size: 13px;
 }
 
 footer strong {
-  color: #54c8ff;
+  color: var(--orange);
 }
 
-@media (max-width: 600px) {
-  header {
-    justify-content: center;
-    gap: 10px;
+/* WHATSAPP FLOAT */
+
+.whatsapp {
+  position: fixed;
+  right: 18px;
+  bottom: 20px;
+  z-index: 200;
+  background: #20c66a;
+  color: white;
+  padding: 13px 18px;
+  border-radius: 35px;
+  font-weight: bold;
+  box-shadow: 0 5px 25px #20c66a55;
+}
+
+/* MOBILE */
+
+@media(max-width: 760px) {
+  .nav {
+    flex-wrap: wrap;
+    padding: 10px 0;
   }
 
   nav {
-    text-align: center;
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 12px;
+    padding-bottom: 8px;
   }
 
   .hero {
-    padding: 65px 5%;
+    min-height: 510px;
   }
 
-  section {
-    padding: 50px 5%;
+  .hero-content {
+    padding: 75px 0;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .service-card {
+    padding: 19px 14px;
+  }
+
+  .service-card h3 {
+    font-size: 16px;
+  }
+
+  .service-card p {
+    font-size: 12px;
+  }
+
+  .contact-grid,
+  .why-grid {
+    grid-template-columns: 1fr;
   }
 }
+
+@media(max-width: 380px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-name {
+    font-size: 13px;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">❄️ TechVibe</div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="container nav">
+
+    <a href="#" class="brand">
+      <img src="techvibe-logo.jpg" alt="TechVibe Logo">
+      <div class="brand-name">
+        TECHVIBE<br>
+        <span>COOLING SOLUTIONS</span>
+      </div>
+    </a>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </div>
 </header>
 
 <main>
 
 <section class="hero" id="home">
-  <div class="badge">❄️ Your Cooling Partner</div>
+  <div class="container">
+    <div class="hero-content">
 
-  <h1>
-    Stay Cool.<br>
-    <span>Live Comfortably.</span>
-  </h1>
+      <div class="tag">PROFESSIONAL A/C SOLUTIONS</div>
 
-  <p>
-    Professional air conditioning repair, installation,
-    cleaning and maintenance services in Colombo 5
-    and Narahenpita, Sri Lanka.
-  </p>
+      <h1>
+        TECH<span>VIBE</span>
+      </h1>
 
-  <a class="btn primary"
-     href="https://wa.me/94756031417?text=Hello%20TechVibe%2C%20I%20need%20AC%20service">
-     💬 Book via WhatsApp
-  </a>
+      <h2>COOLING SOLUTIONS</h2>
 
-  <a class="btn secondary" href="#services">
-    Explore Services →
-  </a>
-</section>
-
-<section id="services">
-  <h2 class="section-title">Our Services</h2>
-  <p class="section-desc">
-    Reliable cooling solutions for your comfort.
-  </p>
-
-  <div class="services">
-
-    <div class="card">
-      <div class="icon">🛠️</div>
-      <h3>A/C Repair</h3>
       <p>
-        Troubleshooting and repair services
-        to help restore your air conditioner's performance.
+        Experience professional air conditioning
+        repair, installation and maintenance services.
+        Keeping your home and workplace cool and comfortable.
       </p>
-    </div>
 
-    <div class="card">
-      <div class="icon">❄️</div>
-      <h3>A/C Installation</h3>
-      <p>
-        Air conditioner installation for homes,
-        offices and other suitable spaces.
-      </p>
-    </div>
+      <div class="buttons">
+        <a class="btn btn-blue"
+           href="tel:+94756031417">CALL NOW</a>
 
-    <div class="card">
-      <div class="icon">🧼</div>
-      <h3>A/C Cleaning</h3>
-      <p>
-        Cleaning and servicing to help maintain
-        airflow and cooling performance.
-      </p>
-    </div>
+        <a class="btn btn-orange"
+           href="https://wa.me/94756031417"
+           target="_blank">WHATSAPP US</a>
+      </div>
 
-    <div class="card">
-      <div class="icon">🔧</div>
-      <h3>Gas Refill</h3>
-      <p>
-        Refrigerant checks and servicing
-        when required, after checking the system.
-      </p>
     </div>
-
-    <div class="card">
-      <div class="icon">⚙️</div>
-      <h3>Maintenance</h3>
-      <p>
-        Routine air conditioner maintenance
-        to help keep your system running efficiently.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🏠</div>
-      <h3>Home & Office</h3>
-      <p>
-        Cooling service solutions for residential
-        and commercial customers.
-      </p>
-    </div>
-
   </div>
 </section>
 
-<section class="about" id="about">
-  <div class="about-box">
-    <h2 class="section-title">Why Choose TechVibe?</h2>
+<section class="services" id="services">
+  <div class="container">
 
-    <p>
-      At TechVibe Cooling Solutions, our goal is to help
-      customers enjoy a comfortable indoor environment
-      through dependable air conditioning services.
-    </p>
+    <div class="section-title">
+      <h2>OUR <span>SERVICES</span></h2>
+      <p>Professional cooling solutions for every space.</p>
+    </div>
 
-    <p>
-      From troubleshooting and cleaning to new
-      installations and routine maintenance, contact us
-      to discuss the right service for your needs.
-    </p>
+    <div class="service-grid">
 
-    <p>
-      <strong>📍 Service Area:</strong>
-      Colombo 5, Narahenpita and nearby areas.
-    </p>
+      <div class="service-card">
+        <div class="service-icon">❄️</div>
+        <h3>A/C Repair</h3>
+        <p>Professional air conditioner troubleshooting and repair services.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>A/C Installation</h3>
+        <p>Air conditioning installation for homes and offices.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🧼</div>
+        <h3>A/C Cleaning</h3>
+        <p>Air conditioner cleaning and regular care services.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🌬️</div>
+        <h3>Gas Refill</h3>
+        <p>Refrigerant inspection and refill services when required.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>Maintenance</h3>
+        <p>Routine maintenance to help keep your AC running properly.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Home & Office</h3>
+        <p>Cooling solutions for residential and commercial spaces.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>WHY CHOOSE <span>TECHVIBE?</span></h2>
+      <p>Your comfort is our priority.</p>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-item">
+        <h3>✓ Professional Service</h3>
+        <p>Careful attention to your air conditioning needs.</p>
+      </div>
+
+      <div class="why-item">
+        <h3>✓ Home & Office</h3>
+        <p>Services for residential and commercial customers.</p>
+      </div>
+
+      <div class="why-item">
+        <h3>✓ Customer Support</h3>
+        <p>Contact us directly for service inquiries.</p>
+      </div>
+
+      <div class="why-item">
+        <h3>✓ Multiple Services</h3>
+        <p>Repair, installation, cleaning and maintenance.</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <section class="contact" id="contact">
-  <h2 class="section-title">Let's Get You Cool!</h2>
+  <div class="container">
 
-  <p class="section-desc">
-    Contact us for AC repairs, installations and servicing.
-  </p>
+    <div class="section-title">
+      <h2>CONTACT <span>US</span></h2>
+      <p>Get in touch with TechVibe Cooling Solutions.</p>
+    </div>
 
-  <div class="contact-box">
-    <h3>TechVibe Cooling Solutions</h3>
+    <div class="contact-grid">
 
-    <p><strong>👨‍🔧 Founder:</strong> Agil Nivedan</p>
+      <div class="contact-box">
 
-    <p>
-      <strong>📍 Address:</strong><br>
-      142/59, Narahenpita, Kirimandala Mahawatta,
-      Colombo 5, Sri Lanka
-    </p>
+        <h2>Get In Touch</h2>
 
-    <p>
-      <strong>📞 Phone:</strong><br>
-      <a href="tel:+94756031417" style="color:#70d6ff">
-        075 603 1417
-      </a>
-      <br>
-      <a href="tel:+94787708831" style="color:#70d6ff">
-        078 770 8831
-      </a>
-    </p>
+        <p><strong>Business:</strong><br>
+        TechVibe Cooling Solutions</p>
 
-    <p>
-      <strong>✉️ Email:</strong><br>
-      <a href="mailto:techvibecoolingsolutions@gmail.com"
-         style="color:#70d6ff">
-        techvibecoolingsolutions@gmail.com
-      </a>
-    </p>
+        <p><strong>Owner:</strong><br>
+        Agil Nivedan</p>
 
-    <a class="btn primary"
-       href="https://wa.me/94756031417?text=Hello%20TechVibe">
-       Message Us on WhatsApp
-    </a>
+        <p><strong>Location:</strong><br>
+        Narahenpita, Colombo 5, Sri Lanka</p>
 
-    <a class="btn secondary"
-       href="https://www.google.com/maps/search/?api=1&query=Narahenpita%2C+Colombo+5%2C+Sri+Lanka">
-       📍 Find Our Service Area
-    </a>
+        <p><strong>Phone:</strong><br>
+        <a href="tel:+94756031417">075 603 1417</a></p>
+
+        <p><strong>Alternative:</strong><br>
+        <a href="tel:+94787708831">078 770 8831</a></p>
+
+        <p><strong>Email:</strong><br>
+        <a href="mailto:Techvibecoolingsolutions@gmail.com">
+        Techvibecoolingsolutions@gmail.com</a></p>
+
+        <div class="buttons">
+          <a class="btn btn-blue"
+             href="tel:+94756031417">CALL NOW</a>
+
+          <a class="btn btn-orange"
+             href="https://www.google.com/maps/search/?api=1&query=Narahenpita+Colombo+5+Sri+Lanka"
+             target="_blank">GOOGLE MAPS</a>
+        </div>
+
+      </div>
+
+      <div class="contact-box">
+
+        <h2>Book A Service</h2>
+
+        <p>Send your service request through WhatsApp.</p>
+
+        <form id="bookingForm">
+
+          <input id="customerName"
+                 type="text"
+                 placeholder="Your Name"
+                 required>
+
+          <input id="customerPhone"
+                 type="tel"
+                 placeholder="Your Phone Number"
+                 required>
+
+          <select id="serviceType" required>
+            <option value="">Select A/C Service</option>
+            <option>A/C Repair</option>
+            <option>A/C Installation</option>
+            <option>A/C Cleaning</option>
+            <option>Gas Refill</option>
+            <option>Maintenance</option>
+            <option>Home & Office A/C Services</option>
+          </select>
+
+          <textarea id="customerMessage"
+                    placeholder="Describe your service requirement"></textarea>
+
+          <button class="btn btn-orange" type="submit">
+            SEND BOOKING VIA WHATSAPP
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
   </div>
 </section>
 
 </main>
 
 <footer>
-  <p>
-    © <span id="year"></span>
-    <strong>TechVibe Cooling Solutions</strong>.
-    All rights reserved.
-  </p>
-  <p>Professional Cooling. Reliable Service. ❄️</p>
+  <div class="container">
+    <p><strong>TECHVIBE COOLING SOLUTIONS</strong></p>
+    <p>Narahenpita, Colombo 5, Sri Lanka</p>
+    <p>© 2026 TechVibe Cooling Solutions. All Rights Reserved.</p>
+  </div>
 </footer>
 
+<a class="whatsapp"
+   href="https://wa.me/94756031417"
+   target="_blank">
+  WhatsApp
+</a>
+
 <script>
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+document.getElementById("bookingForm")
+.addEventListener("submit", function(e) {
+
+  e.preventDefault();
+
+  const name = document.getElementById("customerName").value;
+  const phone = document.getElementById("customerPhone").value;
+  const service = document.getElementById("serviceType").value;
+  const message = document.getElementById("customerMessage").value;
+
+  const text =
+    "TECHVIBE COOLING SOLUTIONS - SERVICE REQUEST\n\n" +
+    "Name: " + name + "\n" +
+    "Phone: " + phone + "\n" +
+    "Service: " + service + "\n" +
+    "Message: " + message;
+
+  const url = "https://wa.me/94756031417?text=" +
+    encodeURIComponent(text);
+
+  window.open(url, "_blank");
+
+});
 </script>
 
 </body>
-  </html>
+</html>
