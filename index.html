@@ -26,7 +26,96 @@
   --orange: #ff941f;
   --white: #ffffff;
   --muted: #c0d9f5;
+} 
+/* TECHVIBE QR TOOLS DESIGN */
+
+.qr-tools {
+  background: linear-gradient(145deg, #04152f, #0b3156);
+  padding: 75px 0;
 }
+
+.qr-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.qr-card {
+  background: linear-gradient(145deg, #12365f, #071a35);
+  border: 1px solid #078dff88;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px #0005;
+  min-width: 0;
+}
+
+.qr-card h3 {
+  color: #54c8ff;
+  margin-bottom: 15px;
+}
+
+.qr-card input {
+  width: 100%;
+  padding: 13px;
+  border-radius: 9px;
+  border: 1px solid #54c8ff;
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+.qr-card button {
+  width: 100%;
+  padding: 13px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(120deg, #078dff, #00bfff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#qr-output {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  padding: 12px;
+  background: white;
+  border-radius: 12px;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 20px;
+}
+
+#qr-output canvas,
+#qr-output img {
+  max-width: 100%;
+  height: auto;
+}
+
+#qr-reader {
+  width: 100%;
+  margin: 15px auto;
+  overflow: hidden;
+}
+
+#scan-result {
+  color: #c0d9f5;
+  overflow-wrap: anywhere;
+  margin: 12px 0;
+}
+
+#open-scanned-link {
+  color: #54c8ff;
+}
+
+@media(max-width: 700px) {
+  .qr-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 * {
   margin: 0;
@@ -718,7 +807,179 @@ footer strong {
 </style>
 </head>
 
-<body>
+<body> 
+<!-- QR LIBRARIES -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qr-code-styling/1.6.0/qr-code-styling.js"></script>
+<script src="https://unpkg.com/html5-qrcode"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // QR GENERATOR
+  const linkInput = document.getElementById("qr-link");
+  const output = document.getElementById("qr-output");
+  const generateBtn = document.getElementById("generate-qr");
+  const downloadBtn = document.getElementById("download-qr");
+
+  let qrCode = null;
+
+  function generateQR() {
+    const link = linkInput.value.trim();
+
+    try {
+      const url = new URL(link);
+
+      if (!["http:", "https:"].includes(url.protocol)) {
+        throw new Error("Invalid link");
+      }
+
+      if (typeof QRCodeStyling === "undefined") {
+        alert("QR library loading failed. Please refresh.");
+        return;
+      }
+
+      qrCode = new QRCodeStyling({
+        width: 300,
+        height: 300,
+        type: "canvas",
+        data: url.href,
+        image: "techvibe-logo.jpg",
+        margin: 12,
+        qrOptions: {
+          errorCorrectionLevel: "H"
+        },
+        imageOptions: {
+          hideBackgroundDots: true,
+          imageSize: 0.20,
+          margin: 5,
+          crossOrigin: "anonymous"
+        },
+        dotsOptions: {
+          color: "#04152f",
+          type: "rounded"
+        },
+        cornersSquareOptions: {
+          color: "#078dff",
+          type: "extra-rounded"
+        },
+        backgroundOptions: {
+          color: "#ffffff"
+        }
+      });
+
+      output.innerHTML = "";
+      qrCode.append(output);
+
+    } catch (error) {
+      alert("Please enter a valid website link.");
+    }
+  }
+
+  generateBtn.addEventListener("click", generateQR);
+
+  downloadBtn.addEventListener("click", function () {
+    if (qrCode) {
+      qrCode.download({
+        name: "TechVibe-QR-Code",
+        extension: "png"
+      });
+    } else {
+      alert("Please generate the QR code first.");
+    }
+  });
+
+  generateQR();
+
+
+  // QR CAMERA SCANNER
+
+  let scanner = null;
+
+  const result = document.getElementById("scan-result");
+  const openLink = document.getElementById("open-scanned-link");
+
+  document.getElementById("start-scan")
+  .addEventListener("click", async function () {
+
+    if (scanner) return;
+
+    if (typeof Html5Qrcode === "undefined") {
+      result.textContent = "Scanner library failed to load.";
+      return;
+    }
+
+    scanner = new Html5Qrcode("qr-reader");
+
+    result.textContent = "Starting camera...";
+    openLink.hidden = true;
+
+    try {
+      await scanner.start(
+        { facingMode: "environment" },
+        {
+          fps: 10,
+          qrbox: { width: 220, height: 220 }
+        },
+        async function (decodedText) {
+
+          result.textContent = "Scanned: " + decodedText;
+
+          try {
+            const url = new URL(decodedText);
+
+            if (["http:", "https:"].includes(url.protocol)) {
+              openLink.href = url.href;
+              openLink.hidden = false;
+            } else {
+              openLink.hidden = true;
+            }
+
+          } catch (error) {
+            openLink.hidden = true;
+          }
+
+          const currentScanner = scanner;
+          scanner = null;
+
+          try {
+            await currentScanner.stop();
+            await currentScanner.clear();
+          } catch (error) {}
+        },
+        function () {}
+      );
+
+    } catch (error) {
+      result.textContent =
+        "Camera unavailable. Please allow camera permission.";
+      scanner = null;
+    }
+
+  });
+
+
+  // STOP SCANNER
+
+  document.getElementById("stop-scan")
+  .addEventListener("click", async function () {
+
+    if (scanner) {
+      const currentScanner = scanner;
+      scanner = null;
+
+      try {
+        await currentScanner.stop();
+        await currentScanner.clear();
+      } catch (error) {}
+
+      result.textContent = "Scanner stopped.";
+    }
+
+  });
+
+});
+</script>
+
 
 <header>
   <div class="container navbar">
@@ -1011,6 +1272,40 @@ footer strong {
 </main>
 
 <!-- FOOTER -->
+
+<!-- TECHVIBE QR TOOLS -->
+<section id="qr-tools" class="qr-tools">
+  <div class="container">
+    <div class="section-heading">
+      <small>SMART TOOLS</small>
+      <h2>TechVibe <span>QR Tools</span></h2>
+      <p>Generate and scan QR codes easily.</p>
+    </div>
+
+    <div class="qr-grid">
+      <div class="qr-card">
+        <h3>QR Code Generator</h3>
+        <input id="qr-link" type="url"
+          value="https://agilnivedan.github.io/TechVibe-Cooling--Solutions-/"
+          placeholder="Enter a website link">
+        <button type="button" id="generate-qr">Generate QR</button>
+        <div id="qr-output"></div>
+        <button type="button" id="download-qr">Download QR PNG</button>
+      </div>
+
+      <div class="qr-card">
+        <h3>QR Code Scanner</h3>
+        <div id="qr-reader"></div>
+        <button type="button" id="start-scan">Start Scanner</button>
+        <button type="button" id="stop-scan">Stop Scanner</button>
+        <p id="scan-result">Scan result will appear here.</p>
+        <a id="open-scanned-link" hidden target="_blank"
+          rel="noopener noreferrer">Open Scanned Link</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END TECHVIBE QR TOOLS -->
 
 <footer>
   <div class="container">
