@@ -1393,6 +1393,16 @@ if ("IntersectionObserver" in window) {
 }
 
 </script>
-
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register(
+      "/TechVibe-Cooling--Solutions-/service-worker.js"
+    ).catch((error) => {
+      console.error("App setup error:", error);
+    });
+  });
+}
+</script>
 </body>
 </html>
