@@ -239,38 +239,55 @@ section {
   font-weight: bold;
 }
 
+
 /* GALLERY */
 
 .gallery {
-  background: #071426;
+  background: linear-gradient(180deg, #071426, #0b1e35);
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
 }
 
 .gallery-item {
-  min-height: 170px;
-  padding: 25px;
-  border: 1px dashed #3b6486;
+  padding: 0;
+  overflow: hidden;
   background: #10243b;
-  border-radius: 15px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  border: 1px solid #244766;
+  border-radius: 16px;
+  transition: .3s;
 }
 
-.gallery-item .icon {
-  font-size: 42px;
+.gallery-item:hover {
+  transform: translateY(-7px);
+  border-color: #54c8ff;
+  box-shadow: 0 12px 30px #0006;
 }
 
-.gallery-item p {
-  color: var(--muted);
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.gallery-info {
+  padding: 18px;
+}
+
+.gallery-info h3 {
+  color: #54c8ff;
+  margin-bottom: 7px;
+}
+
+.gallery-info p {
+  color: #b9cadd;
   font-size: 14px;
 }
+
 
 /* REVIEWS */
 
@@ -571,53 +588,46 @@ footer a {
   </div>
 </section>
 
-  /* GALLERY */
+<!-- GALLERY -->
 
-.gallery {
-  background: linear-gradient(180deg, #071426, #0b1e35);
-}
+<section class="gallery" id="gallery">
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 22px;
-}
+  <h2 class="section-title">Our <span>Work Gallery</span></h2>
 
-.gallery-item {
-  padding: 0;
-  overflow: hidden;
-  background: #10243b;
-  border: 1px solid #244766;
-  border-radius: 16px;
-  transition: .3s;
-}
+  <p class="section-desc">
+    Explore our air conditioning repair, installation
+    and cleaning services.
+  </p>
 
-.gallery-item:hover {
-  transform: translateY(-7px);
-  border-color: #54c8ff;
-  box-shadow: 0 12px 30px #0006;
-}
+  <div class="gallery-grid">
 
-.gallery-item img {
-  display: block;
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
+    <div class="gallery-item">
+      <div class="icon">🔧</div>
+      <div class="gallery-info">
+        <h3>AC Repair</h3>
+        <p>Professional air conditioning repair services.</p>
+      </div>
+    </div>
 
-.gallery-info {
-  padding: 18px;
-}
+    <div class="gallery-item">
+      <div class="icon">❄️</div>
+      <div class="gallery-info">
+        <h3>AC Installation</h3>
+        <p>Professional air conditioner installation.</p>
+      </div>
+    </div>
 
-.gallery-info h3 {
-  color: #54c8ff;
-  margin-bottom: 7px;
-}
+    <div class="gallery-item">
+      <div class="icon">🧼</div>
+      <div class="gallery-info">
+        <h3>AC Cleaning</h3>
+        <p>Air conditioner cleaning and servicing.</p>
+      </div>
+    </div>
 
-.gallery-info p {
-  color: #b9cadd;
-  font-size: 14px;
-}
+  </div>
+
+</section>
 
 
 <!-- CUSTOMER REVIEWS -->
