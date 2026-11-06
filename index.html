@@ -1,201 +1,116 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#06152b">
-<title>TechVibe Cooling Solutions | Professional AC Services</title>
-<meta name="description" content="Professional AC repair, installation, cleaning, gas refill and maintenance in Colombo 5 and Narahenpita, Sri Lanka.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>TechVibe Cooling Solutions</title>
+<meta name="description" content="Professional AC repair, installation, cleaning and maintenance in Colombo 5, Sri Lanka.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#06152b;
-  --bg2:#091e3a;
-  --card:#0d294b;
-  --blue:#079cff;
-  --ice:#43d2ff;
-  --orange:#ff922e;
-  --white:#fff;
-  --muted:#c5d6e9;
-  --line:rgba(67,210,255,.35);
+ --bg:#06152b;--bg2:#0b2342;--card:#102e52;
+ --blue:#079cff;--ice:#43d2ff;--orange:#ff922e;
+ --white:#fff;--muted:#c5d6e9;
+ --line:rgba(67,210,255,.3);
 }
-
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--white);line-height:1.6}
+body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:white;line-height:1.6}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 .container{width:min(94%,1500px);margin:auto}
 
 /* HEADER */
-header{
-  position:sticky;top:0;z-index:999;
-  background:rgba(3,15,34,.96);
-  border-bottom:1px solid var(--line);
-  backdrop-filter:blur(16px);
-}
-.navbar{
-  min-height:78px;display:flex;align-items:center;
-  justify-content:space-between;gap:22px;
-}
-.brand{display:flex;align-items:center;gap:12px}
+header{position:sticky;top:0;z-index:1000;background:rgba(3,15,34,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(15px)}
+.navbar{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px}
 .brand img{width:58px;height:58px;object-fit:contain}
-.brand-name{font-size:23px;font-weight:900;font-style:italic;line-height:1.15}
+.brand-name{font-size:22px;font-weight:900;font-style:italic}
 .brand-name span{color:var(--orange)}
-.brand-name small{display:block;font-size:11px;letter-spacing:1.5px;font-style:normal;color:#d9e9fa}
-nav{display:flex;align-items:center;gap:25px}
+.brand-name small{display:block;font-size:10px;letter-spacing:1.5px;font-style:normal;color:#dcecff}
+nav{display:flex;gap:23px;align-items:center}
 nav a{font-size:13px;font-weight:700;transition:.3s}
 nav a:hover{color:var(--ice)}
 .nav-contact{font-size:13px;line-height:1.7;white-space:nowrap}
-.nav-contact a:hover{color:var(--ice)}
-.nav-wa{
-  background:linear-gradient(135deg,#ffb13f,#ff8122);
-  color:#07172d;padding:12px 20px;border-radius:30px;
-  font-weight:800;font-size:13px;white-space:nowrap;
-  box-shadow:0 5px 18px rgba(255,146,46,.25);
-}
-.menu-btn{display:none;background:none;border:0;color:white;font-size:29px}
+.nav-wa{background:linear-gradient(135deg,#ffb13f,#ff8122);color:#07172d;padding:12px 20px;border-radius:30px;font-weight:800;font-size:13px}
+.menu-btn{display:none;background:none;border:0;color:white;font-size:28px}
 
 /* HERO */
 .hero{
-  min-height:470px;
-  display:grid;
-  grid-template-columns:280px 1fr;
-  align-items:center;
-  gap:32px;
-  padding:55px 5%;
-  position:relative;
-  overflow:hidden;
-  background:
-    linear-gradient(90deg,rgba(4,19,40,.10),rgba(4,19,40,.02)),
-    url("https://commons.wikimedia.org/wiki/Special:FilePath/Sigiriya_Sri_Lanka.jpg?width=2000")
-    center 48%/cover no-repeat;
-  border-bottom:2px solid var(--line);
+ min-height:490px;
+ display:grid;grid-template-columns:280px 1fr;
+ align-items:center;gap:32px;padding:55px 5%;
+ position:relative;overflow:hidden;
+ background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Sigiriya_Rock_Sri_Lanka_%2829959819372%29.jpg?width=2200");
+ background-position:center 48%;background-size:cover;background-repeat:no-repeat;
+ border-bottom:2px solid var(--line);
 }
-.hero-logo{
-  display:flex;align-items:center;justify-content:center;
-  min-height:280px;padding:22px;
-  border-right:2px solid var(--ice);
-}
-.hero-logo img{
-  width:100%;max-width:245px;height:245px;
-  object-fit:contain;
-  filter:drop-shadow(0 8px 18px rgba(0,0,0,.22));
-}
-.hero-content{
-  max-width:760px;padding:30px 34px;
-  background:rgba(3,17,38,.78);
-  border:1px solid rgba(255,255,255,.35);
-  border-radius:18px;
-  backdrop-filter:blur(7px);
-  box-shadow:0 15px 45px rgba(0,0,0,.20);
-}
-.eyebrow{
-  color:var(--ice);font-size:12px;font-weight:800;
-  letter-spacing:2.5px;margin-bottom:12px;
-}
+.hero-logo{display:flex;align-items:center;justify-content:center;min-height:280px;padding:20px;border-right:2px solid var(--ice)}
+.hero-logo img{width:100%;max-width:245px;height:245px;object-fit:contain;filter:drop-shadow(0 8px 18px rgba(0,0,0,.2))}
+.hero-content{max-width:760px;padding:30px 34px;background:rgba(3,17,38,.84);border:1px solid rgba(255,255,255,.4);border-radius:18px;backdrop-filter:blur(8px);box-shadow:0 15px 45px rgba(0,0,0,.22)}
+.eyebrow{color:var(--ice);font-size:12px;font-weight:800;letter-spacing:2.5px;margin-bottom:12px}
 .hero h1{font-size:clamp(35px,4.3vw,58px);line-height:1.12;font-weight:900}
 .hero h1 span{color:var(--orange)}
-.hero-content p{font-size:17px;color:#fff;margin:18px 0 24px;max-width:620px}
-.btn{
-  display:inline-block;padding:12px 24px;border-radius:30px;
-  font-size:13px;font-weight:800;margin:4px 7px 4px 0;
-  transition:.3s;
-}
-.btn:hover{transform:translateY(-4px);box-shadow:0 8px 22px rgba(0,0,0,.3)}
+.hero-content p{font-size:17px;color:white;margin:18px 0 24px}
+.btn{display:inline-block;padding:12px 23px;border-radius:30px;font-size:13px;font-weight:800;margin:4px 7px 4px 0;transition:.3s}
+.btn:hover{transform:translateY(-4px);box-shadow:0 8px 22px #0005}
 .btn-orange{background:linear-gradient(135deg,#ffb13f,#ff8122);color:#07172d}
-.btn-blue{border:2px solid var(--ice);color:white;background:rgba(4,20,42,.55)}
+.btn-blue{border:2px solid var(--ice);color:white}
 
-/* SECTION COMMON */
+/* COMMON */
 .section{padding:65px 0}
 .section-title{text-align:center;font-size:31px;font-weight:900;margin-bottom:38px}
 .section-title span{color:var(--ice)}
-.section-title:after{
-  content:"";display:block;width:76px;height:4px;
-  border-radius:5px;background:var(--orange);margin:11px auto 0;
-}
+.section-title:after{content:"";display:block;width:76px;height:4px;border-radius:5px;background:var(--orange);margin:11px auto 0}
 
 /* SERVICES */
-.services{
-  background:linear-gradient(180deg,#081d39,#06152b);
-  border-bottom:1px solid var(--line);
-}
+.services{background:linear-gradient(180deg,#081d39,#06152b);border-bottom:1px solid var(--line)}
 .service-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:17px}
-.service-card{
-  min-height:145px;padding:22px 12px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;border:1px solid var(--line);border-radius:15px;
-  background:linear-gradient(145deg,#12365f,#0a203e);
-  box-shadow:inset 0 1px rgba(255,255,255,.05),0 8px 22px rgba(0,0,0,.13);
-  transition:.35s;
-}
-.service-card:hover{
-  transform:translateY(-8px);
-  border-color:var(--ice);
-  box-shadow:0 12px 28px rgba(0,156,255,.2),0 0 14px rgba(67,210,255,.12);
-}
-.service-icon{
-  font-size:39px;margin-bottom:10px;
-  filter:drop-shadow(0 0 9px rgba(67,210,255,.35));
-}
+.service-card{min-height:145px;padding:22px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px solid var(--line);border-radius:15px;background:linear-gradient(145deg,#12365f,#0a203e);box-shadow:0 8px 22px #0002;transition:.35s}
+.service-card:hover{transform:translateY(-8px);border-color:var(--ice);box-shadow:0 12px 28px #009cff33}
+.service-icon{font-size:39px;margin-bottom:10px;filter:drop-shadow(0 0 9px #43d2ff55)}
 .service-card h3{font-size:14px;font-weight:800}
 
-/* ABOUT + GALLERY */
+/* ABOUT AND GALLERY */
 .feature-grid{display:grid;grid-template-columns:1fr 1.18fr;gap:24px}
-.panel{
-  border:1px solid var(--line);border-radius:17px;overflow:hidden;
-  background:linear-gradient(145deg,#102f55,#081b35);
-  box-shadow:0 12px 30px rgba(0,0,0,.15);
-}
+.panel{border:1px solid var(--line);border-radius:17px;overflow:hidden;background:linear-gradient(145deg,#102f55,#081b35);box-shadow:0 12px 30px #0003}
 .panel-title{font-size:25px;font-weight:900;padding:21px 23px 12px}
 .panel-title span{border-bottom:3px solid var(--orange);padding-bottom:7px}
-.about-content{
-  padding:12px 23px 24px;
-  display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;
-}
+.about-content{padding:12px 23px 24px;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}
 .about-content p{font-size:14px;color:var(--muted);margin-bottom:12px}
 .about-content strong{color:var(--orange)}
 .about-photo{height:255px;width:100%;object-fit:cover;border-radius:12px}
 .gallery-head{display:flex;align-items:center;justify-content:space-between}
-.view-more{
-  margin-right:20px;padding:8px 14px;border:1px solid var(--orange);
-  border-radius:25px;color:var(--orange);font-size:12px;font-weight:800;
-}
+.view-more{margin-right:20px;padding:8px 14px;border:1px solid var(--orange);border-radius:25px;color:var(--orange);font-size:12px;font-weight:800}
 .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;padding:12px 18px 22px}
-.gallery-grid img{
-  height:170px;width:100%;object-fit:cover;border-radius:11px;
-  border:1px solid var(--line);transition:.35s;
-}
+.gallery-grid img{height:170px;width:100%;object-fit:cover;border-radius:11px;border:1px solid var(--line);cursor:pointer;transition:.35s}
 .gallery-grid img:hover{transform:scale(1.04);border-color:var(--ice)}
+
+/* GALLERY LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.94);align-items:center;justify-content:center;padding:25px}
+.lightbox.show{display:flex}
+.lightbox img{max-width:90vw;max-height:82vh;object-fit:contain;border-radius:10px}
+.lightbox button{position:absolute;border:0;background:#102e52;color:white;font-size:25px;padding:10px 17px;border-radius:50%;cursor:pointer}
+.lightbox .close{top:18px;right:20px}
+.lightbox .prev{left:15px;top:50%}
+.lightbox .next{right:15px;top:50%}
 
 /* REVIEWS */
 .reviews{background:#081c36;border-block:1px solid var(--line)}
 .review-layout{display:grid;grid-template-columns:.8fr 2fr;gap:28px;align-items:center}
 .review-copy{text-align:center;padding:20px}
-.review-star{font-size:48px;color:var(--orange);text-shadow:0 0 18px rgba(255,146,46,.35)}
+.review-star{font-size:48px;color:var(--orange)}
 .review-copy h2{font-size:24px;margin:5px 0}
 .review-copy p{color:var(--muted);font-size:14px;margin:10px 0 18px}
-.review-banner{
-  min-height:220px;border:1px solid var(--line);border-radius:17px;
-  display:flex;align-items:center;justify-content:center;text-align:center;
-  padding:30px;
-  background:
-    linear-gradient(90deg,rgba(3,17,38,.35),rgba(3,17,38,.35)),
-    url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1500&q=90")
-    center/cover no-repeat;
-}
+.review-banner{min-height:220px;border:1px solid var(--line);border-radius:17px;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;background:linear-gradient(90deg,#03112666,#03112666),url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1500&q=90") center/cover}
 .review-banner h2{font-size:clamp(23px,3vw,36px);line-height:1.35}
 .review-banner span{color:var(--orange)}
 
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.contact-card{
-  padding:22px;border-radius:14px;border:1px solid var(--line);
-  background:linear-gradient(145deg,#12345b,#091d38);
-  transition:.3s;
-}
+.contact-card{padding:22px;border-radius:14px;border:1px solid var(--line);background:linear-gradient(145deg,#12345b,#091d38);transition:.3s}
 .contact-card:hover{transform:translateY(-5px);border-color:var(--ice)}
 .contact-card h3{font-size:16px;color:var(--ice);margin-bottom:12px}
 .contact-card p{font-size:13px;color:var(--muted);margin:7px 0;overflow-wrap:anywhere}
@@ -216,78 +131,58 @@ footer p{font-size:12px;color:#aebfd2;margin:5px}
 footer span{color:var(--orange)}
 
 /* WHATSAPP */
-.whatsapp-float{
-  position:fixed;right:23px;bottom:22px;width:60px;height:60px;
-  display:flex;align-items:center;justify-content:center;
-  border-radius:50%;background:#08ce69;color:white;font-size:29px;
-  z-index:999;box-shadow:0 5px 25px rgba(0,0,0,.4);
-  animation:pulse 2s infinite;
-}
-@keyframes pulse{
-  0%,100%{box-shadow:0 0 0 0 rgba(8,206,105,.4),0 5px 25px rgba(0,0,0,.4)}
-  50%{box-shadow:0 0 0 12px rgba(8,206,105,0),0 5px 25px rgba(0,0,0,.4)}
-}
+.whatsapp-float{position:fixed;right:23px;bottom:22px;width:60px;height:60px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#08ce69;color:white;font-size:29px;z-index:999;box-shadow:0 5px 25px #0006}
 
 /* TABLET */
 @media(max-width:1100px){
-  nav{gap:14px}
-  .nav-contact{display:none}
-  .service-grid{grid-template-columns:repeat(3,1fr)}
-  .contact-grid{grid-template-columns:repeat(2,1fr)}
-  .map-layout{grid-template-columns:1fr 1fr}
-  .map-layout>div:last-child{grid-column:1/-1;text-align:center}
+ nav{gap:14px}.nav-contact{display:none}
+ .service-grid{grid-template-columns:repeat(3,1fr)}
+ .contact-grid{grid-template-columns:repeat(2,1fr)}
+ .map-layout{grid-template-columns:1fr 1fr}
+ .map-layout>div:last-child{grid-column:1/-1;text-align:center}
 }
 
 /* MOBILE */
 @media(max-width:760px){
-  .navbar{min-height:68px}
-  .brand img{width:45px;height:45px}
-  .brand-name{font-size:18px}
-  .brand-name small{font-size:9px}
-  .menu-btn{display:block}
-  .nav-wa{display:none}
-  nav{
-    display:none;position:absolute;top:68px;left:0;width:100%;
-    background:#031126;padding:22px 7%;flex-direction:column;
-    align-items:flex-start;border-bottom:1px solid var(--line);
-  }
-  nav.active{display:flex}
-  .hero{
-    min-height:auto;grid-template-columns:1fr;gap:10px;
-    padding:24px 5%;background-position:center center;
-  }
-  .hero-logo{min-height:auto;border-right:0;border-bottom:2px solid var(--ice);padding:5px 5px 15px}
-  .hero-logo img{height:125px;max-width:155px}
-  .hero-content{padding:22px 18px}
-  .hero h1{font-size:34px}
-  .hero-content p{font-size:14px}
-  .section{padding:48px 0}
-  .section-title{font-size:26px;margin-bottom:27px}
-  .service-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
-  .service-card{min-height:125px;padding:17px 7px}
-  .service-icon{font-size:34px}
-  .service-card h3{font-size:12px}
-  .feature-grid{grid-template-columns:1fr;gap:20px}
-  .about-content{grid-template-columns:1fr}
-  .about-photo{height:220px}
-  .panel-title{font-size:22px}
-  .gallery-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-  .gallery-grid img{height:145px}
-  .review-layout{grid-template-columns:1fr;gap:12px}
-  .review-copy{padding:10px}
-  .review-banner{min-height:170px}
-  .contact-grid{grid-template-columns:1fr}
-  .contact-card{padding:19px}
-  .map-layout{grid-template-columns:1fr;text-align:center}
-  .map-layout>div:last-child{grid-column:auto}
-  .map-layout iframe{height:200px}
-  .whatsapp-float{width:54px;height:54px;right:14px;bottom:14px}
+ .navbar{min-height:68px}
+ .brand img{width:45px;height:45px}
+ .brand-name{font-size:18px}
+ .brand-name small{font-size:9px}
+ .menu-btn{display:block}
+ .nav-wa{display:none}
+ nav{display:none;position:absolute;top:68px;left:0;width:100%;background:#031126;padding:22px 7%;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}
+ nav.active{display:flex}
+ .hero{min-height:auto;grid-template-columns:1fr;gap:10px;padding:24px 5%;background-position:center center}
+ .hero-logo{min-height:auto;border-right:0;border-bottom:2px solid var(--ice);padding:5px 5px 15px}
+ .hero-logo img{height:125px;max-width:155px}
+ .hero-content{padding:22px 18px}
+ .hero h1{font-size:34px}
+ .hero-content p{font-size:14px}
+ .section{padding:48px 0}
+ .section-title{font-size:26px;margin-bottom:27px}
+ .service-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+ .service-card{min-height:125px;padding:17px 7px}
+ .service-icon{font-size:34px}
+ .service-card h3{font-size:12px}
+ .feature-grid{grid-template-columns:1fr;gap:20px}
+ .about-content{grid-template-columns:1fr}
+ .about-photo{height:220px}
+ .panel-title{font-size:22px}
+ .gallery-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+ .gallery-grid img{height:145px}
+ .review-layout{grid-template-columns:1fr;gap:12px}
+ .review-copy{padding:10px}
+ .review-banner{min-height:170px}
+ .contact-grid{grid-template-columns:1fr}
+ .contact-card{padding:19px}
+ .map-layout{grid-template-columns:1fr;text-align:center}
+ .map-layout>div:last-child{grid-column:auto}
+ .map-layout iframe{height:200px}
+ .whatsapp-float{width:54px;height:54px;right:14px;bottom:14px}
 }
-
 @media(max-width:380px){
-  .hero h1{font-size:29px}
-  .gallery-grid img{height:120px}
-  .brand-name{font-size:16px}
+ .hero h1{font-size:29px}
+ .gallery-grid img{height:120px}
 }
 </style>
 </head>
@@ -296,202 +191,218 @@ footer span{color:var(--orange)}
 
 <header>
 <div class="container navbar">
+ <a class="brand" href="#home">
+  <img src="techvibe-logo.png" alt="TechVibe Logo">
+  <div class="brand-name">Tech<span>Vibe</span><small>COOLING SOLUTIONS</small></div>
+ </a>
 
-  <a class="brand" href="#home">
-    <img src="techvibe-logo.png" alt="TechVibe Logo">
-    <div class="brand-name">Tech<span>Vibe</span><small>COOLING SOLUTIONS</small></div>
-  </a>
+ <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
 
-  <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+ <nav id="navMenu">
+  <a href="#home" onclick="closeMenu()">⌂ Home</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#gallery" onclick="closeMenu()">Gallery</a>
+  <a href="#reviews" onclick="closeMenu()">Reviews</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+ </nav>
 
-  <nav id="navMenu">
-    <a href="#home" onclick="closeMenu()">⌂ Home</a>
-    <a href="#services" onclick="closeMenu()">Services</a>
-    <a href="#about" onclick="closeMenu()">About</a>
-    <a href="#gallery" onclick="closeMenu()">Gallery</a>
-    <a href="#reviews" onclick="closeMenu()">Reviews</a>
-    <a href="#contact" onclick="closeMenu()">Contact</a>
-  </nav>
-
-  <div class="nav-contact">
-    <a href="tel:+94756031417">☎ 075 603 1417</a><br>
-    <a href="tel:+94787708831">078 770 8831</a>
-  </div>
-
-  <a class="nav-wa" href="https://wa.me/94756031417" target="_blank">☏ WhatsApp</a>
-
+ <div class="nav-contact">
+  <a href="tel:+94756031417">☎ 075 603 1417</a><br>
+  <a href="tel:+94787708831">078 770 8831</a>
+ </div>
+ <a class="nav-wa" href="https://wa.me/94756031417" target="_blank">☏ WhatsApp</a>
 </div>
 </header>
 
 <!-- HERO -->
 <section class="hero" id="home">
-
-  <div class="hero-logo">
-    <img src="techvibe-logo.png" alt="TechVibe Cooling Solutions">
-  </div>
-
-  <div class="hero-content">
-    <div class="eyebrow">STAY COOL • STAY COMFORTABLE</div>
-    <h1>Professional Cooling.<br><span>Reliable Service.</span></h1>
-    <p>AC Repair, Installation, Cleaning & Maintenance in Colombo 5 and Narahenpita.</p>
-    <a href="#services" class="btn btn-orange">⚒ Our Services →</a>
-    <a href="#contact" class="btn btn-blue">☎ Contact Us</a>
-  </div>
-
+ <div class="hero-logo">
+  <img src="techvibe-logo.png" alt="TechVibe Cooling Solutions">
+ </div>
+ <div class="hero-content">
+  <div class="eyebrow">STAY COOL • STAY COMFORTABLE</div>
+  <h1>Professional Cooling.<br><span>Reliable Service.</span></h1>
+  <p>AC Repair, Installation, Cleaning & Maintenance in Colombo 5 and Narahenpita.</p>
+  <a href="#services" class="btn btn-orange">⚒ Our Services →</a>
+  <a href="#contact" class="btn btn-blue">☎ Contact Us</a>
+ </div>
 </section>
 
 <!-- SERVICES -->
 <section class="section services" id="services">
 <div class="container">
-  <h2 class="section-title">Our <span>Services</span></h2>
-
-  <div class="service-grid">
-    <div class="service-card"><span class="service-icon">🔧</span><h3>AC Repair</h3></div>
-    <div class="service-card"><span class="service-icon">⚙️</span><h3>AC Installation</h3></div>
-    <div class="service-card"><span class="service-icon">❄️</span><h3>AC Cleaning</h3></div>
-    <div class="service-card"><span class="service-icon">🧴</span><h3>Gas Refill</h3></div>
-    <div class="service-card"><span class="service-icon">🛡️</span><h3>Maintenance</h3></div>
-    <div class="service-card"><span class="service-icon">🏠</span><h3>Home & Office Cooling</h3></div>
-  </div>
+ <h2 class="section-title">Our <span>Services</span></h2>
+ <div class="service-grid">
+  <div class="service-card"><span class="service-icon">🔧</span><h3>AC Repair</h3></div>
+  <div class="service-card"><span class="service-icon">⚙️</span><h3>AC Installation</h3></div>
+  <div class="service-card"><span class="service-icon">❄️</span><h3>AC Cleaning</h3></div>
+  <div class="service-card"><span class="service-icon">🧴</span><h3>Gas Refill</h3></div>
+  <div class="service-card"><span class="service-icon">🛡️</span><h3>Maintenance</h3></div>
+  <div class="service-card"><span class="service-icon">🏠</span><h3>Home & Office Cooling</h3></div>
+ </div>
 </div>
 </section>
 
-<!-- ABOUT + GALLERY -->
+<!-- ABOUT AND GALLERY -->
 <section class="section">
 <div class="container feature-grid">
 
-  <div class="panel" id="about">
-    <h2 class="panel-title"><span>About TechVibe</span></h2>
-    <div class="about-content">
-      <div>
-        <p>TechVibe Cooling Solutions is your trusted partner for all AC services in Sri Lanka.</p>
-        <p>We provide professional AC repair, installation, cleaning, gas refill and maintenance for homes and offices.</p>
-        <p>We are committed to quality service and customer satisfaction.</p>
-        <p><strong>– Agil Nivedan</strong><br>Founder</p>
-        <a href="#contact" class="btn btn-orange">Learn More →</a>
-      </div>
-      <img class="about-photo"
-        src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=85"
-        alt="Air conditioning technician" loading="lazy">
-    </div>
+ <div class="panel" id="about">
+  <h2 class="panel-title"><span>About TechVibe</span></h2>
+  <div class="about-content">
+   <div>
+    <p>TechVibe Cooling Solutions is your trusted partner for all AC services in Sri Lanka.</p>
+    <p>We provide professional AC repair, installation, cleaning, gas refill and maintenance for homes and offices.</p>
+    <p>We are committed to quality service and customer satisfaction.</p>
+    <p><strong>– Agil Nivedan</strong><br>Founder</p>
+    <a href="#contact" class="btn btn-orange">Learn More →</a>
+   </div>
+   <img class="about-photo" src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=85" alt="Air conditioning technician" loading="lazy">
   </div>
+ </div>
 
-  <div class="panel" id="gallery">
-    <div class="gallery-head">
-      <h2 class="panel-title"><span>Our Work Gallery</span></h2>
-      <a class="view-more" href="#contact">View More →</a>
-    </div>
-    <div class="gallery-grid">
-      <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=700&q=85" alt="AC service" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=700&q=85" alt="Technical work" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=700&q=85" alt="Maintenance work" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=85" alt="Professional service" loading="lazy">
-    </div>
+ <div class="panel" id="gallery">
+  <div class="gallery-head">
+   <h2 class="panel-title"><span>Our Work Gallery</span></h2>
+   <a class="view-more" href="#contact">Contact Us →</a>
   </div>
+  <div class="gallery-grid">
+   <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=85" alt="AC service" onclick="openGallery(0)" loading="lazy">
+   <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=85" alt="Technical work" onclick="openGallery(1)" loading="lazy">
+   <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=900&q=85" alt="Maintenance work" onclick="openGallery(2)" loading="lazy">
+   <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=85" alt="Professional service" onclick="openGallery(3)" loading="lazy">
+  </div>
+ </div>
 
 </div>
 </section>
+
+<!-- GALLERY IMAGE VIEWER -->
+<div class="lightbox" id="lightbox" onclick="closeGallery(event)">
+ <button class="close" onclick="closeGallery()">✕</button>
+ <button class="prev" onclick="changePhoto(-1,event)">❮</button>
+ <img id="largePhoto" src="" alt="Gallery photo">
+ <button class="next" onclick="changePhoto(1,event)">❯</button>
+</div>
 
 <!-- REVIEWS -->
 <section class="section reviews" id="reviews">
 <div class="container review-layout">
-
-  <div class="review-copy">
-    <div class="review-star">★</div>
-    <h2>Customer Reviews</h2>
-    <p>Your feedback helps us grow!</p>
-    <a class="btn btn-blue"
-      href="https://wa.me/94756031417?text=I%20would%20like%20to%20share%20my%20feedback">
-      Share Your Review →
-    </a>
-  </div>
-
-  <div class="review-banner">
-    <h2>PROFESSIONAL COOLING.<br><span>RELIABLE SERVICE.</span></h2>
-  </div>
-
+ <div class="review-copy">
+  <div class="review-star">★</div>
+  <h2>Customer Reviews</h2>
+  <p>Your feedback helps us grow!</p>
+  <a class="btn btn-blue" href="https://wa.me/94756031417?text=I%20would%20like%20to%20share%20my%20feedback">Share Your Review →</a>
+ </div>
+ <div class="review-banner">
+  <h2>PROFESSIONAL COOLING.<br><span>RELIABLE SERVICE.</span></h2>
+ </div>
 </div>
 </section>
 
 <!-- CONTACT -->
 <section class="section" id="contact">
 <div class="container">
-  <h2 class="section-title">Contact <span>Details</span></h2>
+ <h2 class="section-title">Contact <span>Details</span></h2>
+ <div class="contact-grid">
 
-  <div class="contact-grid">
-
-    <div class="contact-card">
-      <h3>☎ Phone Numbers</h3>
-      <p><a href="tel:+94756031417">075 603 1417</a></p>
-      <p><a href="tel:+94787708831">078 770 8831</a></p>
-    </div>
-
-    <div class="contact-card">
-      <h3>✉ Email</h3>
-      <p><a href="mailto:techvibecoolingsolutions@gmail.com">techvibecoolingsolutions@gmail.com</a></p>
-    </div>
-
-    <div class="contact-card">
-      <h3>☏ WhatsApp</h3>
-      <p>Contact us directly for AC service inquiries.</p>
-      <a class="btn btn-orange" href="https://wa.me/94756031417" target="_blank">Chat on WhatsApp</a>
-    </div>
-
-    <div class="contact-card">
-      <h3>📍 Our Location</h3>
-      <p>142/59, Narahenpita,</p>
-      <p>Kirimandala Mahawatta,</p>
-      <p>Colombo 5, Sri Lanka.</p>
-    </div>
-
+  <div class="contact-card">
+   <h3>☎ Phone Numbers</h3>
+   <p><a href="tel:+94756031417">075 603 1417</a></p>
+   <p><a href="tel:+94787708831">078 770 8831</a></p>
   </div>
+
+  <div class="contact-card">
+   <h3>✉ Email</h3>
+   <p><a href="mailto:techvibecoolingsolutions@gmail.com">techvibecoolingsolutions@gmail.com</a></p>
+  </div>
+
+  <div class="contact-card">
+   <h3>☏ WhatsApp</h3>
+   <p>Contact us directly for AC service inquiries.</p>
+   <a class="btn btn-orange" href="https://wa.me/94756031417" target="_blank">Chat on WhatsApp</a>
+  </div>
+
+  <div class="contact-card">
+   <h3>📍 Our Location</h3>
+   <p>142/59, Narahenpita,</p>
+   <p>Kirimandala Mahawatta,</p>
+   <p>Colombo 5, Sri Lanka.</p>
+  </div>
+
+ </div>
 </div>
 </section>
 
 <!-- MAP -->
 <section class="map-section">
 <div class="container map-layout">
-
-  <div>
-    <h3>📍 Find Us on Google Maps</h3>
-    <p>Colombo 5, Narahenpita, Sri Lanka.</p>
-    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Narahenpita+Colombo+5+Sri+Lanka" target="_blank">View Map →</a>
-  </div>
-
-  <div>
-    <iframe
-      src="https://maps.google.com/maps?q=Narahenpita%20Colombo%205%20Sri%20Lanka&output=embed"
-      loading="lazy" title="TechVibe location map">
-    </iframe>
-  </div>
-
-  <div>
-    <h3>TechVibe Cooling Solutions</h3>
-    <p>Stay Cool • Stay Comfortable</p>
-    <p>Professional Cooling. Reliable Service.</p>
-  </div>
-
+ <div>
+  <h3>📍 Find Us on Google Maps</h3>
+  <p>Colombo 5, Narahenpita, Sri Lanka.</p>
+  <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Narahenpita+Colombo+5+Sri+Lanka" target="_blank">View Map →</a>
+ </div>
+ <div>
+  <iframe src="https://maps.google.com/maps?q=Narahenpita%20Colombo%205%20Sri%20Lanka&output=embed" loading="lazy" title="TechVibe location map"></iframe>
+ </div>
+ <div>
+  <h3>TechVibe Cooling Solutions</h3>
+  <p>Stay Cool • Stay Comfortable</p>
+  <p>Professional Cooling. Reliable Service.</p>
+ </div>
 </div>
 </section>
 
 <footer>
-  <h3>TechVibe Cooling Solutions</h3>
-  <p>Professional AC Repair, Installation & Maintenance</p>
-  <p>© <span id="year"></span> TechVibe Cooling Solutions. All Rights Reserved.</p>
-  <p>Designed with <span>♥</span> for a Cooler Sri Lanka</p>
+ <h3>TechVibe Cooling Solutions</h3>
+ <p>Professional AC Repair, Installation & Maintenance</p>
+ <p>© <span id="year"></span> TechVibe Cooling Solutions. All Rights Reserved.</p>
+ <p>Designed with <span>♥</span> for a Cooler Sri Lanka</p>
 </footer>
 
 <a class="whatsapp-float" href="https://wa.me/94756031417" target="_blank" aria-label="WhatsApp">☎</a>
 
 <script>
 function toggleMenu(){
-  document.getElementById("navMenu").classList.toggle("active");
+ document.getElementById("navMenu").classList.toggle("active");
 }
 function closeMenu(){
-  document.getElementById("navMenu").classList.remove("active");
+ document.getElementById("navMenu").classList.remove("active");
 }
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent=new Date().getFullYear();
+
+const galleryImages=[
+ "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1400&q=90",
+ "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1400&q=90",
+ "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1400&q=90",
+ "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1400&q=90"
+];
+let currentPhoto=0;
+
+function openGallery(index){
+ currentPhoto=index;
+ document.getElementById("largePhoto").src=galleryImages[currentPhoto];
+ document.getElementById("lightbox").classList.add("show");
+ document.body.style.overflow="hidden";
+}
+function closeGallery(event){
+ if(!event || event.target.id==="lightbox" || event.target.classList.contains("close")){
+  document.getElementById("lightbox").classList.remove("show");
+  document.body.style.overflow="";
+ }
+}
+function changePhoto(direction,event){
+ if(event)event.stopPropagation();
+ currentPhoto=(currentPhoto+direction+galleryImages.length)%galleryImages.length;
+ document.getElementById("largePhoto").src=galleryImages[currentPhoto];
+}
+document.addEventListener("keydown",function(event){
+ if(event.key==="Escape")closeGallery();
+ if(event.key==="ArrowRight")changePhoto(1);
+ if(event.key==="ArrowLeft")changePhoto(-1);
+});
 </script>
 
 </body>
-  </html>
+</html>
