@@ -2,1444 +2,1080 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>TechVibe Cooling Solutions | AC Repair & Installation Colombo</title>
-  <meta name="description" content="TechVibe Cooling Solutions provides professional air conditioning installation, repair, cleaning and maintenance services in Colombo 5, Narahenpita, Sri Lanka.">
-  <meta name="keywords" content="AC repair Colombo, AC installation Colombo, AC cleaning Narahenpita, TechVibe Cooling Solutions">
-  <meta name="author" content="TechVibe Cooling Solutions">
-  <meta name="theme-color" content="#061a36">
-
-  <meta property="og:title" content="TechVibe Cooling Solutions">
-  <meta property="og:description" content="Professional AC Repair, Installation and Cooling Solutions.">
-  <meta property="og:type" content="website">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Sinhala:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HVACBusiness",
-    "name": "TechVibe Cooling Solutions",
-    "description": "Air conditioning repair, installation, cleaning and maintenance services.",
-    "telephone": "+94756031417",
-    "email": "techvibecoolingsolutions@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "142/59, Narahenpita, Kirimandala Mahawatta",
-      "addressLocality": "Colombo 5",
-      "addressCountry": "LK"
-    },
-    "areaServed": "Colombo, Sri Lanka"
-  }
-  </script>
-
-  <style>
-    :root {
-      --navy: #061a36;
-      --blue: #087cf0;
-      --light-blue: #42c5ff;
-      --orange: #ff792b;
-      --white: #ffffff;
-      --muted: #a9bad0;
-      --dark: #07172b;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', 'Noto Sans Sinhala', sans-serif;
-      background: #f4f8ff;
-      color: var(--dark);
-      overflow-x: hidden;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button, input, select, textarea {
-      font: inherit;
-    }
-
-    .container {
-      width: min(1180px, 92%);
-      margin: auto;
-    }
-
-    /* TOP BAR */
-
-    .topbar {
-      background: #041329;
-      color: #dceaff;
-      padding: 10px 4%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 12px;
-    }
-
-    .topbar strong {
-      color: var(--orange);
-    }
-
-    /* NAVIGATION */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(5, 22, 47, .96);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(255,255,255,.1);
-    }
-
-    .navbar {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: white;
-      font-size: 17px;
-      font-weight: 900;
-    }
-
-    .brand img {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-    }
-
-    .brand span {
-      color: var(--orange);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 23px;
-      color: #e6efff;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .nav-links a:hover {
-      color: var(--orange);
-    }
-
-    .nav-book {
-      background: linear-gradient(110deg, var(--blue), var(--orange));
-      padding: 12px 18px;
-      border-radius: 30px;
-      color: white !important;
-    }
-
-    .menu-btn {
-      display: none;
-      background: none;
-      border: 0;
-      color: white;
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 690px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      color: white;
-      background:
-        linear-gradient(90deg, rgba(3,15,35,.82), rgba(4,22,49,.48), rgba(3,15,35,.55)),
-        url("techvibe-banner.jpg") center center / cover no-repeat;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 50% 45%, rgba(0,135,255,.2), transparent 50%),
-        linear-gradient(0deg, #061a36 0%, transparent 30%);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1.4fr .6fr;
-      align-items: center;
-      gap: 30px;
-      padding: 75px 0 95px;
-    }
-
-    .hero-main {
-      text-align: center;
-    }
-
-    .hero-logo {
-      width: 125px;
-      height: 125px;
-      object-fit: contain;
-      filter: drop-shadow(0 0 22px rgba(56,177,255,.75));
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-size: clamp(35px, 5.2vw, 67px);
-      line-height: 1.08;
-      font-weight: 900;
-      letter-spacing: -2px;
-      text-shadow: 0 5px 25px rgba(0,0,0,.7);
-    }
-
-    .hero h1 .blue {
-      color: #42c5ff;
-    }
-
-    .hero h1 .orange {
-      color: #ff8b42;
-    }
-
-    .hero-subtitle {
-      margin: 20px auto 0;
-      max-width: 610px;
-      font-size: 16px;
-      line-height: 1.8;
-      color: #e5efff;
-    }
-
-    .hero-tag {
-      display: inline-block;
-      border: 1px solid rgba(255,255,255,.35);
-      background: rgba(255,255,255,.1);
-      border-radius: 30px;
-      padding: 9px 17px;
-      margin-bottom: 20px;
-      font-size: 12px;
-      letter-spacing: 2px;
-      color: #fff;
-    }
-
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 13px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 15px 24px;
-      border-radius: 35px;
-      font-size: 14px;
-      font-weight: 800;
-      transition: .3s;
-      border: 0;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      color: white;
-      background: linear-gradient(110deg, #087cf0, #ff792b);
-      box-shadow: 0 8px 30px rgba(0,125,255,.35);
-    }
-
-    .btn-outline {
-      color: white;
-      border: 1px solid rgba(255,255,255,.7);
-      background: rgba(255,255,255,.08);
-    }
-
-    .btn:hover {
-      transform: translateY(-4px);
-      filter: brightness(1.1);
-    }
-
-    /* CLOCK AND CALENDAR */
-
-    .time-panel {
-      display: grid;
-      gap: 17px;
-      max-width: 290px;
-      width: 100%;
-      justify-self: end;
-    }
-
-    .glass-card {
-      background: rgba(5,23,49,.68);
-      border: 1px solid rgba(255,255,255,.25);
-      border-radius: 23px;
-      padding: 24px;
-      backdrop-filter: blur(18px);
-      box-shadow: 0 20px 55px rgba(0,0,0,.3);
-    }
-
-    .clock-label {
-      color: #b8d8ff;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-align: center;
-    }
-
-    .clock {
-      font-size: 39px;
-      font-weight: 900;
-      text-align: center;
-      margin: 9px 0;
-      color: white;
-      text-shadow: 0 0 20px #168fff;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .clock-date {
-      text-align: center;
-      font-size: 12px;
-      color: #ffb17f;
-    }
-
-    .calendar-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 17px;
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .calendar-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      text-align: center;
-      gap: 8px 3px;
-      font-size: 11px;
-    }
-
-    .calendar-grid span {
-      padding: 6px 0;
-    }
-
-    .calendar-grid .weekday {
-      color: #8bbfff;
-      font-weight: 800;
-    }
-
-    .calendar-grid .today {
-      background: var(--orange);
-      color: white;
-      border-radius: 50%;
-      font-weight: 900;
-    }
-
-    /* GENERAL SECTION */
-
-    section {
-      padding: 85px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title small {
-      color: var(--blue);
-      font-weight: 900;
-      letter-spacing: 3px;
-      font-size: 11px;
-    }
-
-    .section-title h2 {
-      margin-top: 12px;
-      font-size: clamp(27px, 4vw, 42px);
-      color: var(--navy);
-      font-weight: 900;
-    }
-
-    .section-title h2 span {
-      color: var(--orange);
-    }
-
-    .section-title p {
-      margin: 13px auto 0;
-      color: #65758b;
-      line-height: 1.8;
-      max-width: 650px;
-      font-size: 14px;
-    }
-
-    /* SERVICES */
-
-    .services {
-      background: #f4f8ff;
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .service-card {
-      background: white;
-      border-radius: 22px;
-      padding: 30px 25px;
-      border: 1px solid #e2eaf5;
-      box-shadow: 0 12px 35px rgba(13,48,91,.06);
-      transition: .3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card::before {
-      content: "";
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: rgba(0,132,255,.07);
-      right: -25px;
-      top: -25px;
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(13,48,91,.12);
-      border-color: #8bcaff;
-    }
-
-    .service-icon {
-      width: 62px;
-      height: 62px;
-      display: grid;
-      place-items: center;
-      border-radius: 18px;
-      color: white;
-      font-size: 28px;
-      background: linear-gradient(135deg, var(--blue), var(--orange));
-      margin-bottom: 22px;
-    }
-
-    .service-card h3 {
-      color: var(--navy);
-      font-size: 18px;
-      margin-bottom: 12px;
-    }
-
-    .service-card p {
-      color: #6a7b91;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .service-link {
-      display: inline-block;
-      color: var(--blue);
-      font-weight: 800;
-      font-size: 13px;
-      margin-top: 19px;
-    }
-
-    /* WHY US */
-
-    .why-us {
-      background: linear-gradient(115deg, #061a36, #0b3b72);
-      color: white;
-    }
-
-    .why-us .section-title h2 {
-      color: white;
-    }
-
-    .why-us .section-title p {
-      color: #c4d7ee;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 17px;
-    }
-
-    .why-item {
-      padding: 24px 16px;
-      text-align: center;
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 18px;
-      background: rgba(255,255,255,.06);
-    }
-
-    .why-item strong {
-      display: block;
-      font-size: 29px;
-      color: #ff974f;
-      margin-bottom: 10px;
-    }
-
-    .why-item p {
-      color: #d6e5f8;
-      font-size: 13px;
-    }
-
-    /* GALLERY */
-
-    .gallery {
-      background: white;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .gallery-item {
-      min-height: 230px;
-      border-radius: 19px;
-      overflow: hidden;
-      position: relative;
-      background: linear-gradient(135deg, #0a3a70, #168bdb, #ff8b42);
-      box-shadow: 0 12px 28px rgba(0,0,0,.1);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      min-height: 230px;
-      object-fit: cover;
-      display: block;
-      transition: .5s;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.06);
-    }
-
-    .gallery-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 35px 18px 17px;
-      color: white;
-      font-weight: 800;
-      font-size: 14px;
-      background: linear-gradient(transparent, rgba(0,0,0,.8));
-    }
-
-    /* FEEDBACK */
-
-    .feedback {
-      background: #edf5ff;
-    }
-
-    .feedback-card {
-      max-width: 760px;
-      margin: auto;
-      text-align: center;
-      padding: 40px 25px;
-      background: white;
-      border: 1px solid #dce9f8;
-      border-radius: 24px;
-      box-shadow: 0 15px 40px rgba(10,60,110,.07);
-    }
-
-    .feedback-card .quote {
-      font-size: 42px;
-      color: var(--orange);
-    }
-
-    .feedback-card p {
-      color: #63758c;
-      line-height: 1.9;
-      font-size: 15px;
-      margin: 15px 0 25px;
-    }
-
-    /* BOOKING */
-
-    .booking {
-      background: linear-gradient(135deg, #061a36, #0b3970);
-      color: white;
-    }
-
-    .booking .section-title h2 {
-      color: white;
-    }
-
-    .booking .section-title p {
-      color: #c7dcf4;
-    }
-
-    .booking-form {
-      max-width: 800px;
-      margin: auto;
-      padding: 35px;
-      border-radius: 25px;
-      background: rgba(255,255,255,.09);
-      border: 1px solid rgba(255,255,255,.18);
-      backdrop-filter: blur(12px);
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-
-    .form-group.full {
-      grid-column: 1 / -1;
-    }
-
-    .form-group label {
-      font-size: 13px;
-      color: #e0edff;
-      font-weight: 700;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid rgba(255,255,255,.2);
-      background: rgba(255,255,255,.96);
-      color: #0a1d37;
-      border-radius: 10px;
-      outline: none;
-      font-size: 14px;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--orange);
-      box-shadow: 0 0 0 3px rgba(255,121,43,.15);
-    }
-
-    .form-group textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
-
-    .booking-submit {
-      width: 100%;
-      margin-top: 22px;
-      font-size: 15px;
-    }
-
-    .booking-note {
-      color: #c5d9f1;
-      font-size: 12px;
-      line-height: 1.7;
-      margin-top: 15px;
-      text-align: center;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      background: white;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-
-    .contact-info {
-      display: grid;
-      gap: 15px;
-    }
-
-    .contact-card {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 20px;
-      border: 1px solid #e0eaf5;
-      border-radius: 16px;
-      background: #f9fbff;
-    }
-
-    .contact-icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      border-radius: 14px;
-      color: white;
-      font-size: 21px;
-      background: linear-gradient(135deg, var(--blue), var(--orange));
-    }
-
-    .contact-card h3 {
-      font-size: 14px;
-      color: var(--navy);
-      margin-bottom: 5px;
-    }
-
-    .contact-card p,
-    .contact-card a {
-      font-size: 13px;
-      color: #687b91;
-      overflow-wrap: anywhere;
-    }
-
-    .map-frame {
-      width: 100%;
-      min-height: 380px;
-      height: 100%;
-      border: 0;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.1);
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #041329;
-      color: #d5e3f4;
-      padding: 45px 0 20px;
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr 1fr;
-      gap: 35px;
-      padding-bottom: 35px;
-    }
-
-    .footer-content h3 {
-      color: white;
-      margin-bottom: 17px;
-      font-size: 16px;
-    }
-
-    .footer-content p,
-    .footer-content a {
-      color: #a9bed7;
-      font-size: 13px;
-      line-height: 2;
-    }
-
-    .footer-content a:hover {
-      color: var(--orange);
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,.12);
-      padding-top: 20px;
-      text-align: center;
-      color: #8ca4bf;
-      font-size: 12px;
-    }
-
-    /* FLOATING BUTTONS */
-
-    .floating-whatsapp {
-      position: fixed;
-      right: 20px;
-      bottom: 22px;
-      z-index: 2000;
-      width: 62px;
-      height: 62px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: #25D366;
-      color: white;
-      font-size: 31px;
-      box-shadow: 0 8px 25px rgba(0,0,0,.25);
-      transition: .3s;
-    }
-
-    .floating-whatsapp:hover {
-      transform: scale(1.1);
-    }
-
-    .floating-booking {
-      position: fixed;
-      left: 20px;
-      bottom: 25px;
-      z-index: 2000;
-      background: linear-gradient(110deg, var(--blue), var(--orange));
-      color: white;
-      padding: 14px 19px;
-      border-radius: 35px;
-      font-weight: 800;
-      font-size: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,.2);
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-      .nav-links {
-        gap: 12px;
-        font-size: 11px;
-      }
-
-      .hero-content {
-        grid-template-columns: 1fr;
-      }
-
-      .time-panel {
-        justify-self: center;
-        grid-template-columns: 1fr 1fr;
-        max-width: 570px;
-      }
-
-      .service-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .why-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 650px) {
-      .topbar {
-        justify-content: center;
-        text-align: center;
-      }
-
-      .navbar {
-        min-height: 68px;
-      }
-
-      .brand {
-        font-size: 14px;
-      }
-
-      .brand img {
-        width: 40px;
-        height: 40px;
-      }
-
-      .menu-btn {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 68px;
-        left: 0;
-        right: 0;
-        background: #061a36;
-        padding: 22px;
-        flex-direction: column;
-        align-items: stretch;
-        font-size: 14px;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .hero {
-        min-height: 750px;
-        background-position: center;
-      }
-
-      .hero-content {
-        padding: 55px 0 75px;
-      }
-
-      .hero-logo {
-        width: 100px;
-        height: 100px;
-      }
-
-      .hero h1 {
-        font-size: 39px;
-        letter-spacing: -1px;
-      }
-
-      .hero-subtitle {
-        font-size: 13px;
-      }
-
-      .time-panel {
-        grid-template-columns: 1fr;
-        max-width: 300px;
-      }
-
-      section {
-        padding: 65px 0;
-      }
-
-      .service-grid,
-      .gallery-grid,
-      .contact-grid,
-      .footer-content {
-        grid-template-columns: 1fr;
-      }
-
-      .why-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .booking-form {
-        padding: 23px 17px;
-      }
-
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .form-group.full {
-        grid-column: auto;
-      }
-
-      .map-frame {
-        min-height: 300px;
-      }
-
-      .floating-booking {
-        left: 12px;
-        bottom: 16px;
-        padding: 12px 14px;
-      }
-
-      .floating-whatsapp {
-        right: 12px;
-        bottom: 14px;
-      }
-    
-/* TECHVIBE PREMIUM 3D CONTACT */
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TechVibe Cooling Solutions | AC Repair & Installation Colombo</title>
+<meta name="description" content="Professional A/C installation, repair, cleaning and maintenance services in Colombo 5, Narahenpita, Sri Lanka.">
+<meta name="theme-color" content="#061a36">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Sinhala:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"HVACBusiness",
+  "name":"TechVibe Cooling Solutions",
+  "description":"Air conditioning repair, installation, cleaning and maintenance services.",
+  "telephone":"+94756031417",
+  "email":"techvibecoolingsolutions@gmail.com",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"142/59, Narahenpita, Kirimandala Mahawatta",
+    "addressLocality":"Colombo 5",
+    "addressCountry":"LK"
+  },
+  "areaServed":"Colombo, Sri Lanka"
+}
+</script>
+
+<style>
+:root {
+  --navy:#061a36;
+  --blue:#087cf0;
+  --light-blue:#42c5ff;
+  --orange:#ff792b;
+  --dark:#07172b;
+  --muted:#a9bad0;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body {
+  font-family:'Inter','Noto Sans Sinhala',sans-serif;
+  background:#f4f8ff;
+  color:var(--dark);
+  overflow-x:hidden;
+}
+
+a { text-decoration:none; color:inherit; }
+button,input,select,textarea { font:inherit; }
+.container { width:min(1180px,92%); margin:auto; }
+
+section { padding:85px 0; }
+
+/* TOP BAR */
+.topbar {
+  background:#041329;
+  color:#dceaff;
+  padding:10px 4%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+  font-size:12px;
+}
+.topbar strong { color:var(--orange); }
+
+/* NAVIGATION */
+header {
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(5,22,47,.97);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.navbar {
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:white;
+  font-size:17px;
+  font-weight:900;
+}
+.brand img { width:48px; height:48px; object-fit:contain; }
+.brand span { color:var(--orange); }
+
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:23px;
+  color:#e6efff;
+  font-size:13px;
+  font-weight:600;
+}
+.nav-links a:hover { color:var(--orange); }
+.nav-book {
+  background:linear-gradient(110deg,var(--blue),var(--orange));
+  padding:12px 18px;
+  border-radius:30px;
+  color:white!important;
+}
+.menu-btn {
+  display:none;
+  background:none;
+  border:0;
+  color:white;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* HERO / WELCOME */
+.hero {
+  min-height:690px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  color:white;
+  background:
+    linear-gradient(90deg,rgba(3,15,35,.86),rgba(4,22,49,.50),rgba(3,15,35,.65)),
+    url("techvibe-banner.jpg") center/cover no-repeat;
+}
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 50% 45%,rgba(0,135,255,.23),transparent 50%),
+    linear-gradient(0deg,#061a36 0%,transparent 30%);
+  pointer-events:none;
+}
+.hero-content {
+  position:relative;
+  z-index:2;
+  width:100%;
+  display:grid;
+  grid-template-columns:1.4fr .6fr;
+  align-items:center;
+  gap:30px;
+  padding:75px 0 95px;
+}
+.hero-main { text-align:center; }
+
+.hero-tag {
+  display:inline-block;
+  border:1px solid rgba(255,255,255,.4);
+  background:rgba(255,255,255,.12);
+  border-radius:30px;
+  padding:10px 20px;
+  margin-bottom:22px;
+  font-size:12px;
+  letter-spacing:2px;
+  color:#fff;
+  box-shadow:0 0 22px rgba(66,197,255,.2);
+}
+.hero-logo {
+  width:125px;
+  height:125px;
+  object-fit:contain;
+  filter:drop-shadow(0 0 22px rgba(56,177,255,.75));
+  margin-bottom:18px;
+}
+.hero h1 {
+  font-size:clamp(35px,5.2vw,67px);
+  line-height:1.08;
+  font-weight:900;
+  letter-spacing:-2px;
+  text-shadow:0 5px 25px rgba(0,0,0,.7);
+}
+.hero h1 .blue { color:#42c5ff; }
+.hero h1 .orange { color:#ff8b42; }
+
+.hero-subtitle {
+  margin:20px auto 0;
+  max-width:610px;
+  font-size:16px;
+  line-height:1.9;
+  color:#e5efff;
+}
+.hero-welcome {
+  margin:15px auto 0;
+  color:#ffb17f;
+  font-size:15px;
+  font-weight:700;
+}
+.hero-buttons {
+  display:flex;
+  justify-content:center;
+  gap:13px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:15px 24px;
+  border-radius:35px;
+  font-size:14px;
+  font-weight:800;
+  transition:.3s;
+  border:0;
+  cursor:pointer;
+}
+.btn-primary {
+  color:white;
+  background:linear-gradient(110deg,#087cf0,#ff792b);
+  box-shadow:0 8px 30px rgba(0,125,255,.35);
+}
+.btn-outline {
+  color:white;
+  border:1px solid rgba(255,255,255,.7);
+  background:rgba(255,255,255,.08);
+}
+.btn:hover { transform:translateY(-4px); filter:brightness(1.1); }
+
+/* CLOCK AND CALENDAR */
+.time-panel {
+  display:grid;
+  gap:17px;
+  max-width:290px;
+  width:100%;
+  justify-self:end;
+}
+.glass-card {
+  background:rgba(5,23,49,.72);
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:23px;
+  padding:24px;
+  backdrop-filter:blur(18px);
+  box-shadow:0 20px 55px rgba(0,0,0,.3);
+}
+.clock-label {
+  color:#b8d8ff;
+  font-size:11px;
+  letter-spacing:3px;
+  text-align:center;
+}
+.clock {
+  font-size:39px;
+  font-weight:900;
+  text-align:center;
+  margin:9px 0;
+  color:white;
+  text-shadow:0 0 20px #168fff;
+  font-variant-numeric:tabular-nums;
+}
+.clock-date { text-align:center; font-size:12px; color:#ffb17f; }
+.calendar-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:17px;
+  font-size:14px;
+  font-weight:800;
+}
+.calendar-grid {
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  text-align:center;
+  gap:8px 3px;
+  font-size:11px;
+}
+.calendar-grid span { padding:6px 0; }
+.calendar-grid .weekday { color:#8bbfff; font-weight:800; }
+.calendar-grid .today {
+  background:var(--orange);
+  color:white;
+  border-radius:50%;
+  font-weight:900;
+}
+
+/* SECTION HEADINGS */
+.section-title { text-align:center; margin-bottom:45px; }
+.section-title small {
+  color:var(--blue);
+  font-weight:900;
+  letter-spacing:3px;
+  font-size:11px;
+}
+.section-title h2 {
+  margin-top:12px;
+  font-size:clamp(27px,4vw,42px);
+  color:var(--navy);
+  font-weight:900;
+}
+.section-title h2 span { color:var(--orange); }
+.section-title p {
+  margin:13px auto 0;
+  color:#65758b;
+  line-height:1.8;
+  max-width:650px;
+  font-size:14px;
+}
+
+/* 3D SERVICES */
+.services { background:#f4f8ff; }
+.service-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  perspective:1200px;
+}
+.service-card {
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  min-height:260px;
+  padding:30px 25px;
+  border-radius:23px;
+  color:white;
+  background:linear-gradient(145deg,#123e70,#061a36 75%);
+  border:1px solid rgba(67,174,255,.4);
+  box-shadow:9px 12px 25px rgba(3,25,54,.16),
+             inset 1px 1px 0 rgba(255,255,255,.12);
+  transform-style:preserve-3d;
+  transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;
+}
+.service-card::before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  width:190px;
+  height:190px;
+  right:-65px;
+  top:-75px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(66,197,255,.3),transparent 70%);
+}
+.service-card::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(120deg,transparent 25%,rgba(255,255,255,.08),transparent 65%);
+  transform:translateX(-100%);
+  transition:transform .6s ease;
+}
+.service-card:hover {
+  transform:translateY(-12px) rotateX(3deg);
+  border-color:var(--orange);
+  box-shadow:0 22px 42px rgba(0,93,180,.23),
+             0 0 25px rgba(0,145,255,.16);
+}
+.service-card:hover::after { transform:translateX(100%); }
+
+.service-icon {
+  width:65px;
+  height:65px;
+  display:grid;
+  place-items:center;
+  border-radius:19px;
+  color:white;
+  font-size:29px;
+  background:linear-gradient(135deg,#087cf0,#ff792b);
+  margin-bottom:22px;
+  box-shadow:0 8px 20px rgba(0,126,255,.28);
+  transform:translateZ(25px);
+}
+.service-card h3 {
+  color:#fff;
+  font-size:18px;
+  margin-bottom:12px;
+  transform:translateZ(15px);
+}
+.service-card p {
+  color:#c7d9ee;
+  font-size:13px;
+  line-height:1.8;
+}
+.service-link {
+  display:inline-block;
+  color:#ffad72;
+  font-weight:800;
+  font-size:13px;
+  margin-top:19px;
+}
+
+/* WHY US */
+.why-us {
+  background:linear-gradient(115deg,#061a36,#0b3b72);
+  color:white;
+}
+.why-us .section-title h2 { color:white; }
+.why-us .section-title p { color:#c4d7ee; }
+.why-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:17px;
+}
+.why-item {
+  padding:24px 16px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:18px;
+  background:rgba(255,255,255,.06);
+  transition:.3s;
+}
+.why-item:hover {
+  transform:translateY(-6px);
+  background:rgba(255,255,255,.11);
+}
+.why-item strong {
+  display:block;
+  font-size:29px;
+  color:#ff974f;
+  margin-bottom:10px;
+}
+.why-item p { color:#d6e5f8; font-size:13px; }
+
+/* GALLERY */
+.gallery { background:white; }
+.gallery-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.gallery-item {
+  min-height:230px;
+  border-radius:19px;
+  overflow:hidden;
+  position:relative;
+  background:linear-gradient(135deg,#0a3a70,#168bdb,#ff8b42);
+  box-shadow:0 12px 28px rgba(0,0,0,.1);
+}
+.gallery-item img {
+  width:100%;
+  height:100%;
+  min-height:230px;
+  object-fit:cover;
+  display:block;
+  transition:.5s;
+}
+.gallery-item:hover img { transform:scale(1.06); }
+.gallery-caption {
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:35px 18px 17px;
+  color:white;
+  font-weight:800;
+  font-size:14px;
+  background:linear-gradient(transparent,rgba(0,0,0,.8));
+}
+
+/* FEEDBACK */
+.feedback { background:#edf5ff; }
+.feedback-card {
+  max-width:760px;
+  margin:auto;
+  text-align:center;
+  padding:40px 25px;
+  background:white;
+  border:1px solid #dce9f8;
+  border-radius:24px;
+  box-shadow:0 15px 40px rgba(10,60,110,.07);
+}
+.feedback-card .quote { font-size:42px; color:var(--orange); }
+.feedback-card p {
+  color:#63758c;
+  line-height:1.9;
+  font-size:15px;
+  margin:15px 0 25px;
+}
+
+/* BOOKING */
+.booking {
+  background:linear-gradient(135deg,#061a36,#0b3970);
+  color:white;
+}
+.booking .section-title h2 { color:white; }
+.booking .section-title p { color:#c7dcf4; }
+.booking-form {
+  max-width:800px;
+  margin:auto;
+  padding:35px;
+  border-radius:25px;
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(12px);
+}
+.form-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+.form-group { display:flex; flex-direction:column; gap:9px; }
+.form-group.full { grid-column:1/-1; }
+.form-group label { font-size:13px; color:#e0edff; font-weight:700; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width:100%;
+  padding:14px;
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.96);
+  color:#0a1d37;
+  border-radius:10px;
+  outline:none;
+  font-size:14px;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color:var(--orange);
+  box-shadow:0 0 0 3px rgba(255,121,43,.15);
+}
+.form-group textarea { min-height:110px; resize:vertical; }
+.booking-submit { width:100%; margin-top:22px; font-size:15px; }
+.booking-note {
+  color:#c5d9f1;
+  font-size:12px;
+  line-height:1.7;
+  margin-top:15px;
+  text-align:center;
+}
+
+/* PREMIUM CONTACT */
 .tv-contact {
-  background: linear-gradient(145deg,#06152d,#0b2850);
-  color: #fff;
-  padding: 65px 20px;
-  border-radius: 24px;
+  background:linear-gradient(145deg,#06152d,#0b2850);
+  color:#fff;
+  padding:75px 20px;
 }
-
-.tv-contact-heading {
-  text-align: center;
-  margin-bottom: 35px;
-}
-
+.tv-contact-heading { text-align:center; margin-bottom:35px; }
 .tv-contact-heading span {
-  color: #ff922e;
-  letter-spacing: 4px;
-  font-weight: bold;
+  color:#ff922e;
+  letter-spacing:4px;
+  font-weight:bold;
+  font-size:12px;
 }
-
 .tv-contact-heading h2 {
-  font-size: clamp(30px,5vw,45px);
-  margin: 12px 0;
+  font-size:clamp(30px,5vw,45px);
+  margin:12px 0;
 }
-
-.tv-contact-heading h2 b {
-  color: #39aaff;
-}
-
-.tv-contact-heading p {
-  color: #c6d8ee;
-}
+.tv-contact-heading h2 b { color:#39aaff; }
+.tv-contact-heading p { color:#c6d8ee; }
 
 .tv-contact-grid {
-  display: grid;
-  grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-  gap: 22px;
-  max-width: 1050px;
-  margin: auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  max-width:1100px;
+  margin:auto;
 }
-
 .tv-contact-card {
-  text-decoration: none;
-  color: #fff;
-  background: linear-gradient(145deg,#123b70,#071b37);
-  padding: 28px 20px;
-  border-radius: 20px;
-  border: 1px solid rgba(75,174,255,.35);
-  box-shadow:
-    8px 8px 20px #031023,
-    -3px -3px 12px rgba(70,160,255,.12);
-  transition: .3s ease;
+  display:block;
+  text-decoration:none;
+  color:#fff;
+  background:linear-gradient(145deg,#123b70,#071b37);
+  padding:27px 20px;
+  border-radius:20px;
+  border:1px solid rgba(75,174,255,.35);
+  box-shadow:8px 8px 20px #031023,
+             -3px -3px 12px rgba(70,160,255,.12);
+  transition:.3s ease;
 }
-
 .tv-contact-card:hover {
-  transform: translateY(-9px);
-  border-color: #ff922e;
-  box-shadow: 0 12px 30px rgba(0,145,255,.3);
+  transform:translateY(-9px);
+  border-color:#ff922e;
+  box-shadow:0 12px 30px rgba(0,145,255,.3);
 }
-
 .tv-contact-icon {
-  font-size: 36px;
-  margin-bottom: 15px;
+  font-size:34px;
+  margin-bottom:15px;
+  filter:drop-shadow(0 0 9px rgba(66,197,255,.5));
 }
-
-.tv-contact-card h3 {
-  font-size: 21px;
-  margin: 8px 0;
-}
-
+.tv-contact-card h3 { font-size:18px; margin:8px 0; }
 .tv-contact-card p {
-  color: #c9ddf4;
-  font-size: 14px;
-  overflow-wrap: anywhere;
+  color:#c9ddf4;
+  font-size:13px;
+  overflow-wrap:anywhere;
 }
-
 .tv-contact-card span {
-  display: inline-block;
-  color: #ff9b3d;
-  margin-top: 12px;
-  font-weight: bold;
+  display:inline-block;
+  color:#ff9b3d;
+  margin-top:12px;
+  font-weight:bold;
+  font-size:13px;
 }
-
 .tv-contact-map {
-  max-width: 1050px;
-  margin: 45px auto 25px;
+  max-width:1050px;
+  margin:45px auto 25px;
 }
-
 .tv-contact-map h3,
 .tv-social h3 {
-  text-align: center;
-  margin-bottom: 18px;
+  text-align:center;
+  margin-bottom:18px;
 }
-
 .tv-contact-map iframe {
-  border-radius: 18px;
-  box-shadow: 0 10px 30px #020b19;
+  width:100%;
+  border:0;
+  border-radius:18px;
+  box-shadow:0 10px 30px #020b19;
 }
-
-.tv-social {
-  text-align: center;
-  margin: 35px 0;
-}
-
+.tv-social { text-align:center; margin:35px 0; }
 .tv-facebook {
-  display: inline-flex;
-  width: 58px;
-  height: 58px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  color: white;
-  background: #1877F2;
-  box-shadow: 0 7px 20px rgba(24,119,242,.4);
-  transition: .3s;
+  display:inline-flex;
+  width:58px;
+  height:58px;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  color:white;
+  background:#1877F2;
+  box-shadow:0 7px 20px rgba(24,119,242,.4);
+  transition:.3s;
 }
-
-.tv-facebook:hover {
-  transform: scale(1.12);
-}
-
-.tv-facebook svg {
-  width: 19px;
-  height: 30px;
-}
-
+.tv-facebook:hover { transform:scale(1.12); }
+.tv-facebook svg { width:19px; height:30px; }
 .tv-founder {
-  text-align: center;
-  border-top: 1px solid #315071;
-  padding-top: 22px;
+  text-align:center;
+  border-top:1px solid #315071;
+  padding-top:22px;
+}
+.tv-founder p { color:#a9c5e4; margin-bottom:5px; }
+.tv-founder h3 { color:#ff9b3d; margin:5px; }
+.tv-founder strong { font-size:14px; }
+
+/* FOOTER */
+footer {
+  background:#041329;
+  color:#d5e3f4;
+  padding:45px 0 20px;
+}
+.footer-content {
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr;
+  gap:35px;
+  padding-bottom:35px;
+}
+.footer-content h3 { color:white; margin-bottom:17px; font-size:16px; }
+.footer-content p,
+.footer-content a {
+  color:#a9bed7;
+  font-size:13px;
+  line-height:2;
+}
+.footer-content a:hover { color:var(--orange); }
+.footer-bottom {
+  border-top:1px solid rgba(255,255,255,.12);
+  padding-top:20px;
+  text-align:center;
+  color:#8ca4bf;
+  font-size:12px;
 }
 
-.tv-founder p {
-  color: #a9c5e4;
-  margin-bottom: 5px;
+/* FLOATING BUTTONS */
+.floating-whatsapp,
+.floating-facebook {
+  position:fixed;
+  z-index:2000;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:white;
+  transition:.3s;
+}
+.floating-whatsapp {
+  right:20px;
+  bottom:22px;
+  background:#25D366;
+  font-size:30px;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+.floating-facebook {
+  right:92px;
+  bottom:22px;
+  background:#1877F2;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+.floating-facebook svg { width:19px; height:30px; }
+.floating-whatsapp:hover,
+.floating-facebook:hover { transform:scale(1.1); }
+
+.floating-booking {
+  position:fixed;
+  left:20px;
+  bottom:25px;
+  z-index:2000;
+  background:linear-gradient(110deg,var(--blue),var(--orange));
+  color:white;
+  padding:14px 19px;
+  border-radius:35px;
+  font-weight:800;
+  font-size:12px;
+  box-shadow:0 8px 25px rgba(0,0,0,.2);
 }
 
-.tv-founder h3 {
-  color: #ff9b3d;
-  margin: 5px;
+/* RESPONSIVE */
+@media(max-width:900px) {
+  .nav-links { gap:12px; font-size:11px; }
+  .hero-content { grid-template-columns:1fr; }
+  .time-panel {
+    justify-self:center;
+    grid-template-columns:1fr 1fr;
+    max-width:570px;
+  }
+  .service-grid { grid-template-columns:repeat(2,1fr); }
+  .why-grid { grid-template-columns:repeat(2,1fr); }
+  .tv-contact-grid { grid-template-columns:repeat(2,1fr); }
 }
 
-.tv-founder strong {
-  font-size: 14px;
+@media(max-width:650px) {
+  .topbar { justify-content:center; text-align:center; }
+  .navbar { min-height:68px; }
+  .brand { font-size:14px; }
+  .brand img { width:40px; height:40px; }
+  .menu-btn { display:block; }
+
+  .nav-links {
+    display:none;
+    position:absolute;
+    top:68px;
+    left:0;
+    right:0;
+    background:#061a36;
+    padding:22px;
+    flex-direction:column;
+    align-items:stretch;
+    font-size:14px;
+  }
+  .nav-links.open { display:flex; }
+
+  .hero { min-height:750px; background-position:center; }
+  .hero-content { padding:55px 0 75px; }
+  .hero-logo { width:100px; height:100px; }
+  .hero h1 { font-size:39px; letter-spacing:-1px; }
+  .hero-subtitle { font-size:13px; }
+  .hero-welcome { font-size:13px; }
+
+  .time-panel { grid-template-columns:1fr; max-width:300px; }
+  section { padding:65px 0; }
+
+  .service-grid,
+  .gallery-grid,
+  .footer-content { grid-template-columns:1fr; }
+
+  .why-grid { grid-template-columns:repeat(2,1fr); }
+  .tv-contact-grid { grid-template-columns:1fr 1fr; gap:13px; }
+  .tv-contact { padding:50px 15px; }
+  .tv-contact-card { padding:20px 13px; }
+  .tv-contact-card h3 { font-size:16px; }
+  .tv-contact-card p { font-size:12px; }
+
+  .booking-form { padding:23px 17px; }
+  .form-grid { grid-template-columns:1fr; }
+  .form-group.full { grid-column:auto; }
+
+  .tv-contact-map iframe { height:300px; }
+  .floating-booking { left:12px; bottom:16px; padding:12px 14px; }
+  .floating-whatsapp { right:12px; bottom:14px; }
+  .floating-facebook { right:82px; bottom:14px; }
 }
 
-@media(max-width:600px) {
-  .tv-contact {
-    padding: 45px 15px;
-  }
-
-  .tv-contact-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 13px;
-  }
-
-  .tv-contact-card {
-    padding: 20px 13px;
-  }
-
-  .tv-contact-card h3 {
-    font-size: 17px;
-  }
-
-  .tv-contact-card p {
-    font-size: 12px;
-  }
-
-  </style>
+@media(max-width:370px) {
+  .tv-contact-grid { grid-template-columns:1fr; }
+  .floating-booking { font-size:10px; }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="topbar">
-    <div>❄ Professional Cooling Solutions | Colombo, Sri Lanka</div>
-    <div>Call: <strong>075 603 1417</strong></div>
+<!-- TOP BAR -->
+<div class="topbar">
+  <div>❄ Professional Cooling Solutions | Colombo, Sri Lanka</div>
+  <div>Call: <strong>075 603 1417</strong></div>
+</div>
+
+<!-- NAVIGATION -->
+<header>
+  <div class="container navbar">
+    <a href="#home" class="brand">
+      <img src="techvibe-logo.png" alt="TechVibe Logo"
+           onerror="this.style.display='none'">
+      <div>TechVibe <span>Cooling Solutions</span></div>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#feedback">Feedback</a>
+      <a href="#contact">Contact</a>
+      <a href="#booking" class="nav-book">Book Now</a>
+    </nav>
   </div>
+</header>
 
-  <header>
-    <div class="container navbar">
+<!-- WELCOME HERO -->
+<section class="hero" id="home">
+  <div class="container hero-content">
 
-      <a href="#home" class="brand">
-        <img src="techvibe-logo.png" alt="TechVibe Logo"
+    <div class="hero-main">
+      <div class="hero-tag">❄ WELCOME TO TECHVIBE ❄</div>
+
+      <br>
+
+      <img class="hero-logo"
+           src="techvibe-logo.png"
+           alt="TechVibe Cooling Solutions Logo"
+           onerror="this.style.display='none'">
+
+      <h1>
+        <span class="blue">TechVibe</span><br>
+        <span class="orange">Cooling Solutions</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Professional Air Conditioning Services.
+        Installation, Repair, Cleaning & Maintenance.
+      </p>
+
+      <p class="hero-welcome">
+        ඔබේ සුවපහසුව අපේ ප්‍රමුඛතාවයයි! 💙
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#booking" class="btn btn-primary">❄ BOOK A SERVICE</a>
+        <a href="https://wa.me/94787708831"
+           target="_blank" rel="noopener"
+           class="btn btn-outline">WHATSAPP US</a>
+      </div>
+    </div>
+
+    <div class="time-panel">
+      <div class="glass-card">
+        <div class="clock-label">SRI LANKA LOCAL TIME</div>
+        <div class="clock" id="digitalClock">00:00:00</div>
+        <div class="clock-date" id="clockDate">Loading date...</div>
+      </div>
+
+      <div class="glass-card">
+        <div class="calendar-head">
+          <span id="calendarMonth">Calendar</span>
+          <span>📅</span>
+        </div>
+        <div class="calendar-grid" id="calendarGrid"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-title">
+      <small>WHAT WE DO</small>
+      <h2>Professional <span>Cooling Services</span></h2>
+      <p>Reliable air conditioning solutions for your home and business.</p>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="service-icon">❄</div>
+        <h3>A/C Installation</h3>
+        <p>Professional air conditioner installation with attention to proper setup and performance.</p>
+        <a href="#booking" class="service-link">Book Installation →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>A/C Repair</h3>
+        <p>Air conditioning troubleshooting and repair services to help restore cooling performance.</p>
+        <a href="#booking" class="service-link">Book Repair →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🧼</div>
+        <h3>A/C Cleaning</h3>
+        <p>Cleaning services for air conditioning units to support cleaner airflow and efficient operation.</p>
+        <a href="#booking" class="service-link">Book Cleaning →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🌬</div>
+        <h3>Gas Refill</h3>
+        <p>Air conditioning gas checks and servicing when required after proper system inspection.</p>
+        <a href="#booking" class="service-link">Request Service →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🛠</div>
+        <h3>Regular Maintenance</h3>
+        <p>Routine maintenance to help keep your air conditioning system in good working condition.</p>
+        <a href="#booking" class="service-link">Book Maintenance →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>Home & Office Services</h3>
+        <p>Cooling service support for residential and commercial air conditioning systems.</p>
+        <a href="#booking" class="service-link">Contact Us →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY TECHVIBE -->
+<section class="why-us">
+  <div class="container">
+    <div class="section-title">
+      <small>WHY CHOOSE US</small>
+      <h2>Why <span>TechVibe?</span></h2>
+      <p>We focus on professional service and customer satisfaction.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-item"><strong>01</strong><p>Professional Service</p></div>
+      <div class="why-item"><strong>02</strong><p>Customer Focus</p></div>
+      <div class="why-item"><strong>03</strong><p>Convenient Booking</p></div>
+      <div class="why-item"><strong>04</strong><p>Colombo Service Area</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REAL WORK GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-title">
+      <small>OUR WORK</small>
+      <h2>Real Work <span>Gallery</span></h2>
+      <p>Selected installation, repair and cleaning work by TechVibe.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="work-1.jpg" alt="TechVibe air conditioning installation"
              onerror="this.style.display='none'">
-        <div>TechVibe <span>Cooling Solutions</span></div>
+        <div class="gallery-caption">A/C Installation</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="work-2.jpg" alt="TechVibe air conditioning repair"
+             onerror="this.style.display='none'">
+        <div class="gallery-caption">A/C Repair</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="work-3.jpg" alt="TechVibe air conditioning cleaning"
+             onerror="this.style.display='none'">
+        <div class="gallery-caption">A/C Cleaning</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMER FEEDBACK -->
+<section class="feedback" id="feedback">
+  <div class="container">
+    <div class="section-title">
+      <small>CUSTOMER EXPERIENCE</small>
+      <h2>Customer <span>Feedback</span></h2>
+      <p>Your experience and feedback help us improve our service.</p>
+    </div>
+
+    <div class="feedback-card">
+      <div class="quote">“</div>
+      <h3>Your Feedback Matters!</h3>
+      <p>
+        ඔබ TechVibe Cooling Solutions වෙතින් සේවාවක් ලබාගෙන තිබේද?
+        ඔබගේ සැබෑ අත්දැකීම සහ අදහස් අපට එවන්න.
+      </p>
+      <a class="btn btn-primary"
+         href="https://wa.me/94787708831?text=Hello%20TechVibe%2C%20I%20would%20like%20to%20share%20my%20feedback."
+         target="_blank" rel="noopener">
+        SEND YOUR FEEDBACK
       </a>
-
-      <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
-
-      <nav class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#feedback">Feedback</a>
-        <a href="#contact">Contact</a>
-        <a href="#booking" class="nav-book">Book Now</a>
-      </nav>
-
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- HERO -->
-
-  <section class="hero" id="home">
-    <div class="container hero-content">
-
-      <div class="hero-main">
-
-        <div class="hero-tag">WELCOME TO TECHVIBE</div>
-
-        <br>
-
-        <img class="hero-logo"
-             src="techvibe-logo.png"
-             alt="TechVibe Cooling Solutions Logo"
-             onerror="this.style.display='none'">
-
-        <h1>
-          <span class="blue">TechVibe</span><br>
-          <span class="orange">Cooling Solutions</span>
-        </h1>
-
-        <p class="hero-subtitle">
-          Professional Air Conditioning Services.
-          Installation, Repair, Cleaning & Maintenance.
-          ඔබේ සුවපහසුව අපේ ප්‍රමුඛතාවයයි!
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#booking" class="btn btn-primary">❄ BOOK A SERVICE</a>
-          <a href="https://wa.me/94787708831"
-             target="_blank" rel="noopener"
-             class="btn btn-outline">WHATSAPP US</a>
-        </div>
-
-      </div>
-
-      <div class="time-panel">
-
-        <div class="glass-card">
-          <div class="clock-label">SRI LANKA LOCAL TIME</div>
-          <div class="clock" id="digitalClock">00:00:00</div>
-          <div class="clock-date" id="clockDate">Loading date...</div>
-        </div>
-
-        <div class="glass-card">
-          <div class="calendar-head">
-            <span id="calendarMonth">Calendar</span>
-            <span>📅</span>
-          </div>
-          <div class="calendar-grid" id="calendarGrid"></div>
-        </div>
-
-      </div>
+<!-- ONLINE BOOKING -->
+<section class="booking" id="booking">
+  <div class="container">
+    <div class="section-title">
+      <small>QUICK & EASY BOOKING</small>
+      <h2>Book Your <span>A/C Service</span></h2>
+      <p>Fill in your details. Your booking request will open directly in WhatsApp.</p>
     </div>
-  </section>
 
-  <!-- SERVICES -->
+    <form class="booking-form" id="bookingForm">
+      <div class="form-grid">
 
-  <section class="services" id="services">
-    <div class="container">
-
-      <div class="section-title">
-        <small>WHAT WE DO</small>
-        <h2>Professional <span>Cooling Services</span></h2>
-        <p>Reliable air conditioning solutions for your home and business.</p>
-      </div>
-
-      <div class="service-grid">
-
-        <div class="service-card">
-          <div class="service-icon">❄</div>
-          <h3>A/C Installation</h3>
-          <p>Professional air conditioner installation with attention to proper setup and performance.</p>
-          <a href="#booking" class="service-link">Book Installation →</a>
+        <div class="form-group">
+          <label for="customerName">Your Name *</label>
+          <input id="customerName" type="text"
+                 placeholder="Enter your name" required>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">🔧</div>
-          <h3>A/C Repair</h3>
-          <p>Air conditioning troubleshooting and repair services to help restore cooling performance.</p>
-          <a href="#booking" class="service-link">Book Repair →</a>
+        <div class="form-group">
+          <label for="customerPhone">Phone Number *</label>
+          <input id="customerPhone" type="tel"
+                 placeholder="07XXXXXXXX" required>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">🧼</div>
-          <h3>A/C Cleaning</h3>
-          <p>Cleaning services for air conditioning units to support cleaner airflow and efficient operation.</p>
-          <a href="#booking" class="service-link">Book Cleaning →</a>
+        <div class="form-group">
+          <label for="serviceType">Select Service *</label>
+          <select id="serviceType" required>
+            <option value="">Choose a service</option>
+            <option>A/C Installation</option>
+            <option>A/C Repair</option>
+            <option>A/C Cleaning</option>
+            <option>Gas Refill</option>
+            <option>Regular Maintenance</option>
+            <option>Home & Office Services</option>
+            <option>Other Service</option>
+          </select>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">🛠</div>
-          <h3>Regular Maintenance</h3>
-          <p>Routine maintenance to help keep your air conditioning system in good working condition.</p>
-          <a href="#booking" class="service-link">Book Maintenance →</a>
+        <div class="form-group">
+          <label for="bookingDate">Preferred Date *</label>
+          <input id="bookingDate" type="date" required>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">🌬</div>
-          <h3>Gas Refill</h3>
-          <p>Air conditioning gas checks and servicing when required after proper system inspection.</p>
-          <a href="#booking" class="service-link">Request Service →</a>
+        <div class="form-group">
+          <label for="bookingTime">Preferred Time</label>
+          <select id="bookingTime">
+            <option value="Morning">Morning</option>
+            <option value="Afternoon">Afternoon</option>
+            <option value="Evening">Evening</option>
+            <option value="Flexible">Flexible</option>
+          </select>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">🏢</div>
-          <h3>Home & Office Services</h3>
-          <p>Cooling service support for residential and commercial air conditioning systems.</p>
-          <a href="#booking" class="service-link">Contact Us →</a>
+        <div class="form-group">
+          <label for="location">Your Location *</label>
+          <input id="location" type="text"
+                 placeholder="Enter your area / address" required>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY TECHVIBE -->
-
-  <section class="why-us">
-    <div class="container">
-
-      <div class="section-title">
-        <small>WHY CHOOSE US</small>
-        <h2>Why <span>TechVibe?</span></h2>
-        <p>We focus on professional service and customer satisfaction.</p>
-      </div>
-
-      <div class="why-grid">
-        <div class="why-item">
-          <strong>01</strong>
-          <p>Professional Service</p>
-        </div>
-        <div class="why-item">
-          <strong>02</strong>
-          <p>Customer Focus</p>
-        </div>
-        <div class="why-item">
-          <strong>03</strong>
-          <p>Convenient Booking</p>
-        </div>
-        <div class="why-item">
-          <strong>04</strong>
-          <p>Colombo Service Area</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- REAL WORK GALLERY -->
-
-  <section class="gallery" id="gallery">
-    <div class="container">
-
-      <div class="section-title">
-        <small>OUR WORK</small>
-        <h2>Real Work <span>Gallery</span></h2>
-        <p>Selected installation, repair and cleaning work by TechVibe.</p>
-      </div>
-
-      <div class="gallery-grid">
-
-        <div class="gallery-item">
-          <img src="work-1.jpg" alt="TechVibe air conditioning installation"
-               onerror="this.style.display='none'">
-          <div class="gallery-caption">A/C Installation</div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="work-2.jpg" alt="TechVibe air conditioning repair"
-               onerror="this.style.display='none'">
-          <div class="gallery-caption">A/C Repair</div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="work-3.jpg" alt="TechVibe air conditioning cleaning"
-               onerror="this.style.display='none'">
-          <div class="gallery-caption">A/C Cleaning</div>
+        <div class="form-group full">
+          <label for="message">Additional Details</label>
+          <textarea id="message"
+            placeholder="Tell us about your A/C issue or service requirement..."></textarea>
         </div>
 
       </div>
-    </div>
-  </section>
 
-  <!-- CUSTOMER FEEDBACK -->
+      <button type="submit" class="btn btn-primary booking-submit">
+        📲 SEND BOOKING TO WHATSAPP
+      </button>
 
-  <section class="feedback" id="feedback">
-    <div class="container">
+      <p class="booking-note">
+        Your WhatsApp app will open with your booking details.
+        Your request is not confirmed until TechVibe contacts you.
+      </p>
+    </form>
+  </div>
+</section>
 
-      <div class="section-title">
-        <small>CUSTOMER EXPERIENCE</small>
-        <h2>Customer <span>Feedback</span></h2>
-        <p>Your experience and feedback help us improve our service.</p>
-      </div>
-
-      <div class="feedback-card">
-        <div class="quote">“</div>
-        <h3>Your Feedback Matters!</h3>
-        <p>
-          ඔබ TechVibe Cooling Solutions වෙතින් සේවාවක් ලබාගෙන තිබේද?
-          ඔබගේ සැබෑ අත්දැකීම සහ අදහස් අපට එවන්න.
-        </p>
-        <a class="btn btn-primary"
-           href="https://wa.me/94787708831?text=Hello%20TechVibe%2C%20I%20would%20like%20to%20share%20my%20feedback."
-           target="_blank" rel="noopener">
-          SEND YOUR FEEDBACK
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ONLINE BOOKING -->
-
-  <section class="booking" id="booking">
-    <div class="container">
-
-      <div class="section-title">
-        <small>QUICK & EASY BOOKING</small>
-        <h2>Book Your <span>A/C Service</span></h2>
-        <p>Fill in your details. Your booking request will open directly in WhatsApp.</p>
-      </div>
-
-      <form class="booking-form" id="bookingForm">
-
-        <div class="form-grid">
-
-          <div class="form-group">
-            <label for="customerName">Your Name *</label>
-            <input id="customerName" type="text"
-                   placeholder="Enter your name" required>
-          </div>
-
-          <div class="form-group">
-            <label for="customerPhone">Phone Number *</label>
-            <input id="customerPhone" type="tel"
-                   placeholder="07XXXXXXXX" required>
-          </div>
-
-          <div class="form-group">
-            <label for="serviceType">Select Service *</label>
-            <select id="serviceType" required>
-              <option value="">Choose a service</option>
-              <option>A/C Installation</option>
-              <option>A/C Repair</option>
-              <option>A/C Cleaning</option>
-              <option>Gas Refill</option>
-              <option>Regular Maintenance</option>
-              <option>Other Service</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="bookingDate">Preferred Date *</label>
-            <input id="bookingDate" type="date" required>
-          </div>
-
-          <div class="form-group">
-            <label for="bookingTime">Preferred Time</label>
-            <select id="bookingTime">
-              <option value="Morning">Morning</option>
-              <option value="Afternoon">Afternoon</option>
-              <option value="Evening">Evening</option>
-              <option value="Flexible">Flexible</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="location">Your Location *</label>
-            <input id="location" type="text"
-                   placeholder="Enter your area / address" required>
-          </div>
-
-          <div class="form-group full">
-            <label for="message">Additional Details</label>
-            <textarea id="message"
-              placeholder="Tell us about your A/C issue or service requirement..."></textarea>
-          </div>
-
-        </div>
-
-        <button type="submit" class="btn btn-primary booking-submit">
-          📲 SEND BOOKING TO WHATSAPP
-        </button>
-
-        <p class="booking-note">
-          Your WhatsApp app will open with your booking details.
-          Your request is not confirmed until TechVibe contacts you.
-        </p>
-
-      </form>
-    </div>
-  </section>
-
-  <!-- CONTACT & MAP -->
-
+<!-- PREMIUM CONTACT -->
 <section class="tv-contact" id="contact">
   <div class="tv-contact-heading">
     <span>GET IN TOUCH</span>
@@ -1456,7 +1092,8 @@
       <span>Call Now →</span>
     </a>
 
-    <a class="tv-contact-card" href="https://wa.me/94787708831">
+    <a class="tv-contact-card" href="https://wa.me/94787708831"
+       target="_blank" rel="noopener">
       <div class="tv-contact-icon">💬</div>
       <h3>WhatsApp</h3>
       <p>078 770 8831</p>
@@ -1473,7 +1110,7 @@
 
     <a class="tv-contact-card"
        href="https://www.google.com/maps/search/?api=1&query=142%2F59+Narahenpita+Kirimandala+Mahawatta+Colombo+5+Sri+Lanka"
-       target="_blank">
+       target="_blank" rel="noopener">
       <div class="tv-contact-icon">📍</div>
       <h3>Our Location</h3>
       <p>142/59, Narahenpita, Colombo 5</p>
@@ -1486,10 +1123,10 @@
     <h3>Find Our Location</h3>
     <iframe
       src="https://maps.google.com/maps?q=142%2F59%20Narahenpita%20Kirimandala%20Mahawatta%20Colombo%205%20Sri%20Lanka&output=embed"
-      width="100%" height="300"
-      style="border:0;"
+      height="300"
       loading="lazy"
-      allowfullscreen>
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade">
     </iframe>
   </div>
 
@@ -1497,7 +1134,7 @@
     <h3>Follow TechVibe</h3>
     <a class="tv-facebook"
        href="https://www.facebook.com/share/19pt92PGZP/"
-       target="_blank"
+       target="_blank" rel="noopener"
        aria-label="Visit TechVibe Facebook Page">
       <svg viewBox="0 0 320 512" aria-hidden="true">
         <path fill="currentColor"
@@ -1512,192 +1149,196 @@
     <strong>TechVibe Cooling Solutions</strong>
   </div>
 </section>
-  
-  <!-- FOOTER -->
 
-  <footer>
-    <div class="container">
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
 
-      <div class="footer-content">
-
-        <div>
-          <h3>TechVibe <span style="color:#ff792b">Cooling Solutions</span></h3>
-          <p>
-            Professional A/C Installation, Repair, Cleaning and Maintenance.
-            Your comfort is our priority!
-          </p>
-        </div>
-
-        <div>
-          <h3>Quick Links</h3>
-          <p><a href="#home">Home</a></p>
-          <p><a href="#services">Our Services</a></p>
-          <p><a href="#gallery">Our Gallery</a></p>
-          <p><a href="#booking">Online Booking</a></p>
-        </div>
-
-        <div>
-          <h3>Connect With Us</h3>
-          <p><a href="https://www.facebook.com/share/19pt92PGZP/"
-                target="_blank" rel="noopener">Facebook Page</a></p>
-          <p><a href="https://wa.me/94787708831"
-                target="_blank" rel="noopener">WhatsApp</a></p>
-          <p><a href="mailto:techvibecoolingsolutions@gmail.com">Email Us</a></p>
-        </div>
-
+      <div>
+        <h3>TechVibe <span style="color:#ff792b">Cooling Solutions</span></h3>
+        <p>
+          Professional A/C Installation, Repair, Cleaning and Maintenance.
+          Your comfort is our priority!
+        </p>
       </div>
 
-      <div class="footer-bottom">
-        © <span id="year"></span> TechVibe Cooling Solutions.
-        All Rights Reserved. | Founder: Agil Nivedan
+      <div>
+        <h3>Quick Links</h3>
+        <p><a href="#home">Home</a></p>
+        <p><a href="#services">Our Services</a></p>
+        <p><a href="#gallery">Our Gallery</a></p>
+        <p><a href="#booking">Online Booking</a></p>
+      </div>
+
+      <div>
+        <h3>Connect With Us</h3>
+        <p><a href="https://www.facebook.com/share/19pt92PGZP/"
+              target="_blank" rel="noopener">Facebook Page</a></p>
+        <p><a href="https://wa.me/94787708831"
+              target="_blank" rel="noopener">WhatsApp</a></p>
+        <p><a href="mailto:techvibecoolingsolutions@gmail.com">Email Us</a></p>
       </div>
 
     </div>
-  </footer>
 
-  <!-- FLOATING WHATSAPP -->
+    <div class="footer-bottom">
+      © <span id="year"></span> TechVibe Cooling Solutions.
+      All Rights Reserved. | Founder: Agil Nivedan
+    </div>
+  </div>
+</footer>
 
-  <a class="floating-whatsapp"
-     href="https://wa.me/94787708831"
-     target="_blank" rel="noopener"
-     aria-label="Chat with TechVibe on WhatsApp">
-    ☎
-  </a>
+<!-- FLOATING FACEBOOK -->
+<a class="floating-facebook"
+   href="https://www.facebook.com/share/19pt92PGZP/"
+   target="_blank" rel="noopener"
+   aria-label="Visit TechVibe on Facebook">
+  <svg viewBox="0 0 320 512" aria-hidden="true">
+    <path fill="currentColor"
+    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06H297V6.26S260.43 0 225.36 0C152.77 0 105.47 44 105.47 123.9v71.44H24.09V288h81.38v224h100.2V288z"/>
+  </svg>
+</a>
 
-  <a class="floating-booking" href="#booking">
-    📅 QUICK BOOKING
-  </a>
+<!-- FLOATING WHATSAPP -->
+<a class="floating-whatsapp"
+   href="https://wa.me/94787708831"
+   target="_blank" rel="noopener"
+   aria-label="Chat with TechVibe on WhatsApp">
+  ☎
+</a>
 
-  <script>
-    // MOBILE NAVIGATION
+<a class="floating-booking" href="#booking">
+  📅 QUICK BOOKING
+</a>
 
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.getElementById("navLinks");
+<script>
+// MOBILE NAVIGATION
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
 
-    menuBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
-    });
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
 
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-      });
-    });
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+  });
+});
 
-    // SRI LANKA DIGITAL CLOCK
+// SRI LANKA DIGITAL CLOCK
+function updateClock() {
+  const now = new Date();
 
-    function updateClock() {
-      const now = new Date();
+  const time = new Intl.DateTimeFormat("en-GB", {
+    timeZone:"Asia/Colombo",
+    hour:"2-digit",
+    minute:"2-digit",
+    second:"2-digit",
+    hour12:false
+  }).format(now);
 
-      const time = new Intl.DateTimeFormat("en-GB", {
-        timeZone: "Asia/Colombo",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: false
-      }).format(now);
+  const date = new Intl.DateTimeFormat("en-GB", {
+    timeZone:"Asia/Colombo",
+    weekday:"long",
+    day:"numeric",
+    month:"long",
+    year:"numeric"
+  }).format(now);
 
-      const date = new Intl.DateTimeFormat("en-GB", {
-        timeZone: "Asia/Colombo",
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-        year: "numeric"
-      }).format(now);
+  document.getElementById("digitalClock").textContent = time;
+  document.getElementById("clockDate").textContent = date;
+}
+updateClock();
+setInterval(updateClock,1000);
 
-      document.getElementById("digitalClock").textContent = time;
-      document.getElementById("clockDate").textContent = date;
-    }
+// CALENDAR - SRI LANKA DATE
+function renderCalendar() {
+  const parts = new Intl.DateTimeFormat("en", {
+    timeZone:"Asia/Colombo",
+    year:"numeric",
+    month:"numeric",
+    day:"numeric"
+  }).formatToParts(new Date());
 
-    updateClock();
-    setInterval(updateClock, 1000);
+  const getPart = type => Number(parts.find(p => p.type === type).value);
 
-    // CALENDAR
+  const year = getPart("year");
+  const month = getPart("month") - 1;
+  const today = getPart("day");
 
-    function renderCalendar() {
-      const now = new Date();
+  const monthName = new Intl.DateTimeFormat("en", {
+    timeZone:"Asia/Colombo",
+    month:"long",
+    year:"numeric"
+  }).format(new Date());
 
-      const year = now.getFullYear();
-      const month = now.getMonth();
-      const today = now.getDate();
+  document.getElementById("calendarMonth").textContent = monthName;
 
-      const monthName = now.toLocaleString("en", {
-        month: "long",
-        year: "numeric"
-      });
+  const firstDay = new Date(Date.UTC(year,month,1)).getUTCDay();
+  const daysInMonth = new Date(Date.UTC(year,month+1,0)).getUTCDate();
 
-      document.getElementById("calendarMonth").textContent = monthName;
+  const grid = document.getElementById("calendarGrid");
+  grid.innerHTML = "";
 
-      const firstDay = new Date(year, month, 1).getDay();
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
+  ["Su","Mo","Tu","We","Th","Fr","Sa"].forEach(day => {
+    const span = document.createElement("span");
+    span.className = "weekday";
+    span.textContent = day;
+    grid.appendChild(span);
+  });
 
-      const grid = document.getElementById("calendarGrid");
-      grid.innerHTML = "";
+  for (let i=0;i<firstDay;i++) {
+    grid.appendChild(document.createElement("span"));
+  }
 
-      ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].forEach(day => {
-        const span = document.createElement("span");
-        span.className = "weekday";
-        span.textContent = day;
-        grid.appendChild(span);
-      });
+  for (let day=1;day<=daysInMonth;day++) {
+    const span = document.createElement("span");
+    span.textContent = day;
 
-      for (let i = 0; i < firstDay; i++) {
-        grid.appendChild(document.createElement("span"));
-      }
+    if (day === today) span.className = "today";
+    grid.appendChild(span);
+  }
+}
+renderCalendar();
 
-      for (let day = 1; day <= daysInMonth; day++) {
-        const span = document.createElement("span");
-        span.textContent = day;
+// BOOKING DATE MINIMUM - SRI LANKA
+const dateInput = document.getElementById("bookingDate");
 
-        if (day === today) {
-          span.className = "today";
-        }
+const sriLankaDate = new Intl.DateTimeFormat("en-CA", {
+  timeZone:"Asia/Colombo",
+  year:"numeric",
+  month:"2-digit",
+  day:"2-digit"
+}).format(new Date());
 
-        grid.appendChild(span);
-      }
-    }
+dateInput.min = sriLankaDate;
 
-    renderCalendar();
+// WHATSAPP BOOKING FORM
+document.getElementById("bookingForm").addEventListener("submit",function(event) {
+  event.preventDefault();
 
-    // BOOKING DATE MINIMUM
+  const name = document.getElementById("customerName").value.trim();
+  const phone = document.getElementById("customerPhone").value.trim();
+  const service = document.getElementById("serviceType").value;
+  const date = document.getElementById("bookingDate").value;
+  const time = document.getElementById("bookingTime").value;
+  const location = document.getElementById("location").value.trim();
+  const message = document.getElementById("message").value.trim();
 
-    const dateInput = document.getElementById("bookingDate");
+  if (!name || !phone || !service || !date || !location) {
+    alert("Please complete all required fields.");
+    return;
+  }
 
-    const sriLankaDate = new Intl.DateTimeFormat("en-CA", {
-      timeZone: "Asia/Colombo",
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit"
-    }).format(new Date());
+  const phonePattern = /^[0-9+\s-]{9,15}$/;
+  if (!phonePattern.test(phone)) {
+    alert("Please enter a valid phone number.");
+    return;
+  }
 
-    dateInput.min = sriLankaDate;
-
-    // WHATSAPP BOOKING FORM
-
-    document.getElementById("bookingForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const name = document.getElementById("customerName").value.trim();
-      const phone = document.getElementById("customerPhone").value.trim();
-      const service = document.getElementById("serviceType").value;
-      const date = document.getElementById("bookingDate").value;
-      const time = document.getElementById("bookingTime").value;
-      const location = document.getElementById("location").value.trim();
-      const message = document.getElementById("message").value.trim();
-
-      if (!name || !phone || !service || !date || !location) {
-        alert("Please complete all required fields.");
-        return;
-      }
-
-      const phonePattern = /^[0-9+\s-]{9,15}$/;
-
-      if (!phonePattern.test(phone)) {
-        alert("Please enter a valid phone number.");
-        return;
-      }
-
-      const bookingMessage =
+  const bookingMessage =
 `❄ TECHVIBE COOLING SOLUTIONS
 NEW SERVICE BOOKING
 
@@ -1715,18 +1356,15 @@ Please contact me regarding this booking.
 
 Thank you!`;
 
-      const whatsappURL =
-        "https://wa.me/94787708831?text=" +
-        encodeURIComponent(bookingMessage);
+  const whatsappURL =
+    "https://wa.me/94787708831?text=" + encodeURIComponent(bookingMessage);
 
-      window.open(whatsappURL, "_blank");
-    });
+  window.open(whatsappURL,"_blank");
+});
 
-    // FOOTER YEAR
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script>
+// FOOTER YEAR
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
