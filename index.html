@@ -942,7 +942,176 @@
         right: 12px;
         bottom: 14px;
       }
-    }
+    
+/* TECHVIBE PREMIUM 3D CONTACT */
+
+.tv-contact {
+  background: linear-gradient(145deg,#06152d,#0b2850);
+  color: #fff;
+  padding: 65px 20px;
+  border-radius: 24px;
+}
+
+.tv-contact-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.tv-contact-heading span {
+  color: #ff922e;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+
+.tv-contact-heading h2 {
+  font-size: clamp(30px,5vw,45px);
+  margin: 12px 0;
+}
+
+.tv-contact-heading h2 b {
+  color: #39aaff;
+}
+
+.tv-contact-heading p {
+  color: #c6d8ee;
+}
+
+.tv-contact-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+  gap: 22px;
+  max-width: 1050px;
+  margin: auto;
+}
+
+.tv-contact-card {
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(145deg,#123b70,#071b37);
+  padding: 28px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(75,174,255,.35);
+  box-shadow:
+    8px 8px 20px #031023,
+    -3px -3px 12px rgba(70,160,255,.12);
+  transition: .3s ease;
+}
+
+.tv-contact-card:hover {
+  transform: translateY(-9px);
+  border-color: #ff922e;
+  box-shadow: 0 12px 30px rgba(0,145,255,.3);
+}
+
+.tv-contact-icon {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.tv-contact-card h3 {
+  font-size: 21px;
+  margin: 8px 0;
+}
+
+.tv-contact-card p {
+  color: #c9ddf4;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.tv-contact-card span {
+  display: inline-block;
+  color: #ff9b3d;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.tv-contact-map {
+  max-width: 1050px;
+  margin: 45px auto 25px;
+}
+
+.tv-contact-map h3,
+.tv-social h3 {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.tv-contact-map iframe {
+  border-radius: 18px;
+  box-shadow: 0 10px 30px #020b19;
+}
+
+.tv-social {
+  text-align: center;
+  margin: 35px 0;
+}
+
+.tv-facebook {
+  display: inline-flex;
+  width: 58px;
+  height: 58px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  background: #1877F2;
+  box-shadow: 0 7px 20px rgba(24,119,242,.4);
+  transition: .3s;
+}
+
+.tv-facebook:hover {
+  transform: scale(1.12);
+}
+
+.tv-facebook svg {
+  width: 19px;
+  height: 30px;
+}
+
+.tv-founder {
+  text-align: center;
+  border-top: 1px solid #315071;
+  padding-top: 22px;
+}
+
+.tv-founder p {
+  color: #a9c5e4;
+  margin-bottom: 5px;
+}
+
+.tv-founder h3 {
+  color: #ff9b3d;
+  margin: 5px;
+}
+
+.tv-founder strong {
+  font-size: 14px;
+}
+
+@media(max-width:600px) {
+  .tv-contact {
+    padding: 45px 15px;
+  }
+
+  .tv-contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+  }
+
+  .tv-contact-card {
+    padding: 20px 13px;
+  }
+
+  .tv-contact-card h3 {
+    font-size: 17px;
+  }
+
+  .tv-contact-card p {
+    font-size: 12px;
+  }
+
   </style>
 </head>
 
