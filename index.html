@@ -1212,7 +1212,31 @@ footer {
   📅 QUICK BOOKING
 </a>
 
-<script>
+<script type="module">
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
+
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/13.2.0/firebase-firestore.js";
+
+// FIREBASE CONFIG
+const firebaseConfig = {
+  apiKey: "AIzaSyA5YrTXH3UIUX-PimEQ05X6HDgXp-jr4kcI",
+  authDomain: "techvibe-cooling-solutions.firebaseapp.com",
+  projectId: "techvibe-cooling-solutions",
+  storageBucket: "techvibe-cooling-solutions.firebasestorage.app",
+  messagingSenderId: "371234823181",
+  appId: "1:371234823181:web:0264f0c0e944a52d7e0944",
+  measurementId: "G-8LK4NTF02B"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
 // MOBILE NAVIGATION
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
@@ -1227,73 +1251,73 @@ navLinks.querySelectorAll("a").forEach(link => {
   });
 });
 
-// SRI LANKA DIGITAL CLOCK
+// SRI LANKA CLOCK
 function updateClock() {
   const now = new Date();
 
-  const time = new Intl.DateTimeFormat("en-GB", {
-    timeZone:"Asia/Colombo",
-    hour:"2-digit",
-    minute:"2-digit",
-    second:"2-digit",
-    hour12:false
-  }).format(now);
+  document.getElementById("digitalClock").textContent =
+    new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Asia/Colombo",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false
+    }).format(now);
 
-  const date = new Intl.DateTimeFormat("en-GB", {
-    timeZone:"Asia/Colombo",
-    weekday:"long",
-    day:"numeric",
-    month:"long",
-    year:"numeric"
-  }).format(now);
-
-  document.getElementById("digitalClock").textContent = time;
-  document.getElementById("clockDate").textContent = date;
+  document.getElementById("clockDate").textContent =
+    new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Asia/Colombo",
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric"
+    }).format(now);
 }
-updateClock();
-setInterval(updateClock,1000);
 
-// CALENDAR - SRI LANKA DATE
+updateClock();
+setInterval(updateClock, 1000);
+
+// CALENDAR
 function renderCalendar() {
   const parts = new Intl.DateTimeFormat("en", {
-    timeZone:"Asia/Colombo",
-    year:"numeric",
-    month:"numeric",
-    day:"numeric"
+    timeZone: "Asia/Colombo",
+    year: "numeric",
+    month: "numeric",
+    day: "numeric"
   }).formatToParts(new Date());
 
-  const getPart = type => Number(parts.find(p => p.type === type).value);
+  const getPart = type =>
+    Number(parts.find(p => p.type === type).value);
 
   const year = getPart("year");
   const month = getPart("month") - 1;
   const today = getPart("day");
 
-  const monthName = new Intl.DateTimeFormat("en", {
-    timeZone:"Asia/Colombo",
-    month:"long",
-    year:"numeric"
-  }).format(new Date());
+  document.getElementById("calendarMonth").textContent =
+    new Intl.DateTimeFormat("en", {
+      timeZone: "Asia/Colombo",
+      month: "long",
+      year: "numeric"
+    }).format(new Date());
 
-  document.getElementById("calendarMonth").textContent = monthName;
-
-  const firstDay = new Date(Date.UTC(year,month,1)).getUTCDay();
-  const daysInMonth = new Date(Date.UTC(year,month+1,0)).getUTCDate();
+  const firstDay = new Date(Date.UTC(year, month, 1)).getUTCDay();
+  const daysInMonth = new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
 
   const grid = document.getElementById("calendarGrid");
   grid.innerHTML = "";
 
-  ["Su","Mo","Tu","We","Th","Fr","Sa"].forEach(day => {
+  ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].forEach(day => {
     const span = document.createElement("span");
     span.className = "weekday";
     span.textContent = day;
     grid.appendChild(span);
   });
 
-  for (let i=0;i<firstDay;i++) {
+  for (let i = 0; i < firstDay; i++) {
     grid.appendChild(document.createElement("span"));
   }
 
-  for (let day=1;day<=daysInMonth;day++) {
+  for (let day = 1; day <= daysInMonth; day++) {
     const span = document.createElement("span");
     span.textContent = day;
 
@@ -1301,23 +1325,30 @@ function renderCalendar() {
     grid.appendChild(span);
   }
 }
+
 renderCalendar();
 
-// BOOKING DATE MINIMUM - SRI LANKA
+// BOOKING DATE MINIMUM
 const dateInput = document.getElementById("bookingDate");
 
 const sriLankaDate = new Intl.DateTimeFormat("en-CA", {
-  timeZone:"Asia/Colombo",
-  year:"numeric",
-  month:"2-digit",
-  day:"2-digit"
+  timeZone: "Asia/Colombo",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit"
 }).format(new Date());
 
 dateInput.min = sriLankaDate;
 
-// WHATSAPP BOOKING FORM
-document.getElementById("bookingForm").addEventListener("submit",function(event) {
+// FIREBASE BOOKING FORM
+const bookingForm = document.getElementById("bookingForm");
+
+bookingForm.addEventListener("submit", async function(event) {
   event.preventDefault();
+
+  const submitButton = bookingForm.querySelector(
+    'button[type="submit"]'
+  );
 
   const name = document.getElementById("customerName").value.trim();
   const phone = document.getElementById("customerPhone").value.trim();
@@ -1333,8 +1364,14 @@ document.getElementById("bookingForm").addEventListener("submit",function(event)
   }
 
   const phonePattern = /^[0-9+\s-]{9,15}$/;
+
   if (!phonePattern.test(phone)) {
     alert("Please enter a valid phone number.");
+    return;
+  }
+
+  if (date < sriLankaDate) {
+    alert("Please select a valid future date.");
     return;
   }
 
@@ -1357,14 +1394,53 @@ Please contact me regarding this booking.
 Thank you!`;
 
   const whatsappURL =
-    "https://wa.me/94787708831?text=" + encodeURIComponent(bookingMessage);
+    "https://wa.me/94787708831?text=" +
+    encodeURIComponent(bookingMessage);
 
-  window.open(whatsappURL,"_blank");
+  submitButton.disabled = true;
+  submitButton.textContent = "Saving Booking...";
+
+  try {
+    // SAVE BOOKING TO FIRESTORE
+    await addDoc(collection(db, "bookings"), {
+      customerName: name,
+      phone: phone,
+      service: service,
+      preferredDate: date,
+      preferredTime: time,
+      address: location,
+      message: message,
+      status: "Pending",
+      createdAt: serverTimestamp()
+    });
+
+    alert(
+      "Your booking request has been saved successfully! " +
+      "WhatsApp will now open."
+    );
+
+    bookingForm.reset();
+
+    window.location.href = whatsappURL;
+
+  } catch (error) {
+    console.error("Booking error:", error);
+
+    alert(
+      "Booking could not be saved. Please try again or contact us on WhatsApp."
+    );
+
+    submitButton.disabled = false;
+    submitButton.textContent = "📲 SEND BOOKING TO WHATSAPP";
+  }
 });
 
 // FOOTER YEAR
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+   </script>
+
 
 </body>
 </html>
