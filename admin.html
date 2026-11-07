@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechVibe Admin Dashboard</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#071426;
+  color:white;
+}
+header{
+  background:#102b4c;
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+header h2{margin:0;color:#55c7ff}
+.container{
+  max-width:1000px;
+  margin:25px auto;
+  padding:15px;
+}
+.panel{
+  background:#10233d;
+  padding:22px;
+  border-radius:15px;
+  margin-bottom:20px;
+}
+input,select,button{
+  width:100%;
+  padding:13px;
+  margin:8px 0;
+  border:0;
+  border-radius:8px;
+  font-size:15px;
+}
+input,select{
+  background:#eaf4ff;
+  color:#10233d;
+}
+button{
+  background:#08a9ef;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+.logout{
+  width:auto;
+  padding:10px 18px;
+  background:#e65c46;
+}
+.booking{
+  background:#173554;
+  padding:17px;
+  border-radius:12px;
+  margin:14px 0;
+  border-left:4px solid #08a9ef;
+  overflow-wrap:anywhere;
+}
+.booking p{line-height:1.6}
+.small{color:#b9d5ed;font-size:13px}
+#dashboard{display:none}
+#message{color:#ffca70}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>❄️ TechVibe Admin</h2>
+  <button class="logout" id="logoutBtn" style="display:none">
+    Logout
+  </button>
+</header>
+
+<div class="container">
+
+  <section class="panel" id="loginPanel">
+    <h2>Admin Login 🔐</h2>
+    <p class="small">Login to manage customer bookings.</p>
+
+    <input type="email" id="email" placeholder="Admin Email">
+    <input type="password" id="password" placeholder="Password">
+
+    <button id="loginBtn">Login</button>
+    <p id="message"></p>
+  </section>
+
+  <section id="dashboard">
+    <div class="panel">
+      <h2>Welcome to Dashboard 💙</h2>
+      <p>Customer Booking Management</p>
+      <h3 id="bookingCount">Total Bookings: 0</h3>
+    </div>
+
+    <div class="panel">
+      <h2>Customer Bookings</h2>
+      <div id="bookingList">Loading bookings...</div>
+    </div>
+  </section>
+
+</div>
+
+<script type="module">
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
+
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut
+} from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
+
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  orderBy,
+  doc,
+  updateDoc
+} from "https://www.gstatic.com/firebasejs/13.2.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA5YrTXH3UIUX-PimEQ05X6HDgXp-jr4kcI",
+  authDomain: "techvibe-cooling-solutions.firebaseapp.com",
+  projectId: "techvibe-cooling-solutions",
+  storageBucket: "techvibe-cooling-solutions.firebasestorage.app",
+  messagingSenderId: "371234823181",
+  appId: "1:371234823181:web:0264f0c0e944a52d7e0944",
+  measurementId: "G-8LK4NTF02B"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+const loginPanel = document.getElementById("loginPanel");
+const dashboard = document.getElementById("dashboard");
+const message = document.getElementById("message");
+const bookingList = document.getElementById("bookingList");
+const logoutBtn = document.getElementById("logoutBtn");
+
+document.getElementById("loginBtn").addEventListener("click", async () => {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+
+  message.textContent = "Logging in...";
+
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+  } catch (error) {
+    message.textContent = "Login failed. Check your email and password.";
+  }
+});
+
+onAuthStateChanged(auth, async (user) => {
+  if (user && user.uid === "cKuGCz2tbmYqT05fCXdrfTQ3fry1") {
+    loginPanel.style.display = "none";
+    dashboard.style.display = "block";
+    logoutBtn.style.display = "block";
+    await loadBookings();
+  } else {
+    dashboard.style.display = "none";
+    loginPanel.style.display = "block";
+    logoutBtn.style.display = "none";
+
+    if (user) {
+      await signOut(auth);
+      message.textContent = "Access denied. Admin only.";
+    }
+  }
+});
+
+logoutBtn.addEventListener("click", async () => {
+  await signOut(auth);
+});
+
+async function loadBookings() {
+  bookingList.textContent = "Loading bookings...";
+
+  try {
+    const q = query(
+      collection(db, "bookings"),
+      orderBy("createdAt", "desc")
+    );
+
+    const snapshot = await getDocs(q);
+
+    document.getElementById("bookingCount").textContent =
+      "Total Bookings: " + snapshot.size;
+
+    bookingList.innerHTML = "";
+
+    if (snapshot.empty) {
+      bookingList.textContent = "No bookings yet.";
+      return;
+    }
+
+    snapshot.forEach((item) => {
+      const b = item.data();
+      const card = document.createElement("div");
+      card.className = "booking";
+
+      const title = document.createElement("h3");
+      title.textContent = "👤 " + (b.customerName || "Customer");
+
+      const details = [
+        "📞 Phone: " + (b.phone || ""),
+        "🔧 Service: " + (b.service || ""),
+        "📅 Date: " + (b.preferredDate || ""),
+        "⏰ Time: " + (b.preferredTime || ""),
+        "📍 Address: " + (b.address || ""),
+        "💬 Message: " + (b.message || "")
+      ];
+
+      card.appendChild(title);
+
+      details.forEach((line) => {
+        const p = document.createElement("p");
+        p.textContent = line;
+        card.appendChild(p);
+      });
+
+      const status = document.createElement("select");
+
+      ["Pending", "Confirmed", "Completed", "Cancelled"]
+        .forEach((value) => {
+          const option = document.createElement("option");
+          option.value = value;
+          option.textContent = value;
+          status.appendChild(option);
+        });
+
+      status.value = b.status || "Pending";
+
+      const save = document.createElement("button");
+      save.textContent = "Update Booking Status";
+
+      save.addEventListener("click", async () => {
+        try {
+          await updateDoc(doc(db, "bookings", item.id), {
+            status: status.value
+          });
+
+          save.textContent = "Updated ✓";
+        } catch (error) {
+          alert("Update failed. Please try again.");
+        }
+      });
+
+      card.appendChild(status);
+      card.appendChild(save);
+      bookingList.appendChild(card);
+    });
+
+  } catch (error) {
+    bookingList.textContent =
+      "Could not load bookings. Please check Firebase Rules.";
+  }
+}
+</script>
+
+</body>
+</html>
