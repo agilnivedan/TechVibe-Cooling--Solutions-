@@ -1317,9 +1317,11 @@ import {
   getFirestore,
   collection,
   addDoc,
-  serverTimestamp
+  serverTimestamp,
+  query,
+  orderBy,
+  onSnapshot
 } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-firestore.js";
-
 // FIREBASE CONFIG
 const firebaseConfig = {
   apiKey: "AIzaSyA5YrTXH3UIUX-PimEQ05X6HDgXp-jr4kcI",
@@ -1437,6 +1439,91 @@ const sriLankaDate = new Intl.DateTimeFormat("en-CA", {
 
 dateInput.min = sriLankaDate;
 
+// TECHVIBE CUSTOMER REVIEWS
+
+const reviewForm = document.getElementById("reviewForm");
+const reviewsList = document.getElementById("reviewsList");
+const reviewStatus = document.getElementById("reviewStatus");
+const reviewSubmit = document.getElementById("reviewSubmit");
+
+reviewForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const name = document.getElementById("reviewName").value.trim();
+  const rating = Number(document.getElementById("reviewRating").value);
+  const message = document.getElementById("reviewMessage").value.trim();
+
+  if (!name || !message || !Number.isInteger(rating) ||
+      rating < 1 || rating > 5) {
+    reviewStatus.textContent = "Please complete all fields.";
+    return;
+  }
+
+  reviewSubmit.disabled = true;
+  reviewSubmit.textContent = "Submitting...";
+
+  try {
+    await addDoc(collection(db, "reviews"), {
+      customerName: name,
+      rating: rating,
+      message: message,
+      createdAt: serverTimestamp()
+    });
+
+    reviewForm.reset();
+    reviewStatus.textContent = "Thank you! Your review has been published.";
+
+  } catch (error) {
+    console.error("Review error:", error);
+    reviewStatus.textContent = "Could not submit review. Please try again.";
+  } finally {
+    reviewSubmit.disabled = false;
+    reviewSubmit.textContent = "SUBMIT REVIEW";
+  }
+});
+
+// REAL-TIME PUBLIC REVIEWS
+
+const reviewsQuery = query(
+  collection(db, "reviews"),
+  orderBy("createdAt", "desc")
+);
+
+onSnapshot(reviewsQuery, (snapshot) => {
+  reviewsList.replaceChildren();
+
+  if (snapshot.empty) {
+    reviewsList.textContent = "Be the first to share your experience!";
+    return;
+  }
+
+  snapshot.forEach((doc) => {
+    const review = doc.data();
+
+    const card = document.createElement("div");
+    card.className = "review-item";
+
+    const customer = document.createElement("h3");
+    customer.textContent = review.customerName;
+
+    const stars = document.createElement("div");
+    stars.className = "review-stars";
+    stars.textContent =
+      "★".repeat(review.rating) +
+      "☆".repeat(5 - review.rating);
+
+    const message = document.createElement("p");
+    message.textContent = review.message;
+
+    card.append(customer, stars, message);
+    reviewsList.appendChild(card);
+  });
+
+}, (error) => {
+  console.error("Reviews loading error:", error);
+  reviewsList.textContent = "Reviews are temporarily unavailable.";
+});
+  
 // FIREBASE BOOKING FORM
 const bookingForm = document.getElementById("bookingForm");
 
