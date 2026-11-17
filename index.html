@@ -802,7 +802,60 @@ footer {
   .tv-contact-grid { grid-template-columns:1fr; }
   .floating-booking { font-size:10px; }
 }
-</style>
+#reviewForm {
+  display:grid;
+  gap:15px;
+  margin-top:20px;
+}
+
+#reviewForm input,
+#reviewForm select,
+#reviewForm textarea {
+  width:100%;
+  padding:14px;
+  border:1px solid #dce9f8;
+  border-radius:10px;
+  background:#f8fbff;
+  color:#07172b;
+}
+
+#reviewForm textarea {
+  min-height:110px;
+}
+
+.reviews-list {
+  max-width:900px;
+  margin:35px auto 0;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.review-item {
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  border:1px solid #dce9f8;
+  box-shadow:0 10px 25px rgba(0,40,90,.07);
+}
+
+.review-stars {
+  color:#f5a623;
+  font-size:22px;
+  margin:10px 0;
+}
+
+.review-item p {
+  color:#63758c;
+  line-height:1.8;
+  overflow-wrap:anywhere;
+}
+
+@media(max-width:650px) {
+  .reviews-list {
+    grid-template-columns:1fr;
+  }
+  }</style>
 </head>
 
 <body>
@@ -1001,22 +1054,41 @@ footer {
   <div class="container">
     <div class="section-title">
       <small>CUSTOMER EXPERIENCE</small>
-      <h2>Customer <span>Feedback</span></h2>
-      <p>Your experience and feedback help us improve our service.</p>
+      <h2>Customer <span>Reviews</span></h2>
+      <p>Share your experience with TechVibe Cooling Solutions.</p>
     </div>
 
     <div class="feedback-card">
-      <div class="quote">“</div>
-      <h3>Your Feedback Matters!</h3>
-      <p>
-        ඔබ TechVibe Cooling Solutions වෙතින් සේවාවක් ලබාගෙන තිබේද?
-        ඔබගේ සැබෑ අත්දැකීම සහ අදහස් අපට එවන්න.
-      </p>
-      <a class="btn btn-primary"
-         href="https://wa.me/94787708831?text=Hello%20TechVibe%2C%20I%20would%20like%20to%20share%20my%20feedback."
-         target="_blank" rel="noopener">
-        SEND YOUR FEEDBACK
-      </a>
+      <h3>Write Your Review</h3>
+
+      <form id="reviewForm">
+        <input id="reviewName" type="text"
+          placeholder="Your Name" maxlength="60" required>
+
+        <select id="reviewRating" required>
+          <option value="">Select Rating</option>
+          <option value="5">★★★★★ - Excellent</option>
+          <option value="4">★★★★ - Very Good</option>
+          <option value="3">★★★ - Good</option>
+          <option value="2">★★ - Fair</option>
+          <option value="1">★ - Poor</option>
+        </select>
+
+        <textarea id="reviewMessage"
+          placeholder="Write your experience..."
+          maxlength="500" required></textarea>
+
+        <button type="submit" class="btn btn-primary"
+          id="reviewSubmit">
+          SUBMIT REVIEW
+        </button>
+      </form>
+
+      <p id="reviewStatus" aria-live="polite"></p>
+    </div>
+
+    <div id="reviewsList" class="reviews-list">
+      <p>Loading customer reviews...</p>
     </div>
   </div>
 </section>
