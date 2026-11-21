@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,6 +56,7 @@
       --blue: #087cf0;
       --ice: #42c5ff;
       --orange: #ff792b;
+      --green: #39df91;
       --white: #ffffff;
       --text: #07172b;
       --muted: #a9bad0;
@@ -208,7 +208,12 @@
       overflow: hidden;
       color: white;
       background:
-        linear-gradient(90deg,rgba(3,15,35,.90),rgba(4,22,49,.58),rgba(3,15,35,.76)),
+        linear-gradient(
+          90deg,
+          rgba(3,15,35,.18),
+          rgba(4,22,49,.10),
+          rgba(3,15,35,.18)
+        ),
         url("techvibe-banner.jpg") center/cover no-repeat;
     }
 
@@ -217,44 +222,59 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 50% 45%,rgba(0,135,255,.25),transparent 50%),
-        linear-gradient(0deg,#061a36 0%,transparent 35%);
+        radial-gradient(
+          circle at 50% 45%,
+          rgba(0,135,255,.08),
+          transparent 55%
+        ),
+        linear-gradient(
+          0deg,
+          rgba(6,26,54,.18),
+          transparent 25%
+        );
       pointer-events: none;
     }
+
+    /* CLOCK LEFT / BRAND CONTENT RIGHT */
 
     .hero-content {
       position: relative;
       z-index: 2;
       width: 100%;
       display: grid;
-      grid-template-columns: 1.4fr .6fr;
+      grid-template-columns: .65fr 1.35fr;
       align-items: center;
-      gap: 30px;
+      gap: 45px;
       padding: 75px 0 95px;
     }
 
     .hero-main {
       text-align: center;
+      grid-column: 2;
+      grid-row: 1;
     }
 
     .hero-tag {
       display: inline-block;
-      border: 1px solid rgba(255,255,255,.4);
+      border: 1px solid rgba(255,255,255,.45);
       background: rgba(255,255,255,.10);
       border-radius: 30px;
-      padding: 10px 20px;
-      margin-bottom: 22px;
-      font-size: 12px;
-      letter-spacing: 2px;
-      color: white;
-      box-shadow: 0 0 22px rgba(66,197,255,.2);
+      padding: 11px 22px;
+      margin-bottom: 17px;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: #ffffff;
+      box-shadow: 0 0 22px rgba(66,197,255,.25);
+      text-shadow: 0 2px 8px rgba(0,0,0,.65);
     }
 
     .hero-logo {
-      width: 150px;
-      height: 150px;
+      width: 155px;
+      height: 155px;
       object-fit: contain;
-      margin-bottom: 18px;
+      display: block;
+      margin: 12px auto 15px;
       animation: techVibeGlow 3.6s ease-in-out infinite;
       will-change: transform,filter;
     }
@@ -289,18 +309,23 @@
     }
 
     .hero-subtitle {
-      margin: 20px auto 0;
+      margin: 16px auto 0;
       max-width: 610px;
       font-size: 16px;
       line-height: 1.9;
-      color: #e5efff;
+      color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0,0,0,.8);
     }
 
     .hero-welcome {
-      margin: 15px auto 0;
-      color: #ffb17f;
-      font-size: 15px;
-      font-weight: 700;
+      margin: 17px auto 0;
+      color: #ffffff;
+      font-family: 'Noto Sans Sinhala','Inter',sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      text-shadow:
+        0 2px 8px rgba(0,0,0,.8),
+        0 0 15px rgba(66,197,255,.35);
     }
 
     .hero-buttons {
@@ -308,7 +333,7 @@
       justify-content: center;
       gap: 13px;
       flex-wrap: wrap;
-      margin-top: 30px;
+      margin-top: 27px;
     }
 
     .btn {
@@ -334,6 +359,7 @@
       color: white;
       border: 1px solid rgba(255,255,255,.7);
       background: rgba(255,255,255,.08);
+      backdrop-filter: blur(8px);
     }
 
     .btn:hover {
@@ -341,30 +367,37 @@
       filter: brightness(1.1);
     }
 
-    /* CLOCK AND CALENDAR */
+    /* CLOCK AND CALENDAR - LEFT SIDE GLASS */
 
     .time-panel {
       display: grid;
       gap: 17px;
       max-width: 290px;
       width: 100%;
-      justify-self: end;
+      justify-self: start;
+      grid-column: 1;
+      grid-row: 1;
     }
 
     .glass-card {
-      background: rgba(5,23,49,.72);
-      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.38);
       border-radius: 23px;
       padding: 24px;
-      backdrop-filter: blur(18px);
-      box-shadow: 0 20px 55px rgba(0,0,0,.3);
+      backdrop-filter: blur(12px) saturate(150%);
+      -webkit-backdrop-filter: blur(12px) saturate(150%);
+      box-shadow:
+        0 15px 40px rgba(0,0,0,.12),
+        inset 0 1px 1px rgba(255,255,255,.25);
     }
 
     .clock-label {
-      color: #b8d8ff;
+      color: #42c5ff;
       font-size: 11px;
       letter-spacing: 3px;
       text-align: center;
+      font-weight: 800;
+      text-shadow: 0 1px 5px rgba(0,0,0,.45);
     }
 
     .clock {
@@ -372,15 +405,20 @@
       font-weight: 900;
       text-align: center;
       margin: 9px 0;
-      color: white;
-      text-shadow: 0 0 20px #168fff;
+      background: linear-gradient(90deg,#ff792b,#42c5ff,#39df91);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
       font-variant-numeric: tabular-nums;
+      filter: drop-shadow(0 0 8px rgba(66,197,255,.3));
     }
 
     .clock-date {
       text-align: center;
       font-size: 12px;
       color: #ffb17f;
+      font-weight: 700;
+      text-shadow: 0 1px 5px rgba(0,0,0,.45);
     }
 
     .calendar-head {
@@ -390,6 +428,12 @@
       margin-bottom: 17px;
       font-size: 14px;
       font-weight: 800;
+      color: #ffffff;
+      text-shadow: 0 1px 5px rgba(0,0,0,.4);
+    }
+
+    .calendar-head span:last-child {
+      color: #39df91;
     }
 
     .calendar-grid {
@@ -398,22 +442,31 @@
       text-align: center;
       gap: 8px 3px;
       font-size: 11px;
+      color: #ffffff;
+      text-shadow: 0 1px 5px rgba(0,0,0,.4);
     }
 
     .calendar-grid span {
       padding: 6px 0;
+      border-radius: 50%;
     }
 
     .calendar-grid .weekday {
-      color: #8bbfff;
-      font-weight: 800;
+      color: #42c5ff;
+      font-weight: 900;
+    }
+
+    .calendar-grid span:nth-child(2n+9):not(.today):not(.weekday) {
+      color: #39df91;
     }
 
     .calendar-grid .today {
-      background: var(--orange);
-      color: white;
+      background: #ff792b;
+      color: #ffffff;
       border-radius: 50%;
       font-weight: 900;
+      box-shadow: 0 0 15px rgba(255,121,43,.55);
+      text-shadow: none;
     }
 
     /* SECTION TITLES */
@@ -1117,7 +1170,7 @@
       }
     }
 
-    /* RESPONSIVE */
+    /* TABLET RESPONSIVE */
 
     @media (max-width: 900px) {
       .nav-links {
@@ -1127,9 +1180,17 @@
 
       .hero-content {
         grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hero-main {
+        grid-column: 1;
+        grid-row: 1;
       }
 
       .time-panel {
+        grid-column: 1;
+        grid-row: 2;
         justify-self: center;
         grid-template-columns: 1fr 1fr;
         max-width: 570px;
@@ -1147,6 +1208,8 @@
         grid-template-columns: repeat(2,1fr);
       }
     }
+
+    /* MOBILE RESPONSIVE */
 
     @media (max-width: 650px) {
       .topbar {
@@ -1196,11 +1259,18 @@
 
       .hero-content {
         padding: 55px 0 75px;
+        gap: 30px;
+      }
+
+      .hero-tag {
+        font-size: 10px;
+        letter-spacing: 2px;
+        padding: 9px 15px;
       }
 
       .hero-logo {
-        width: 105px;
-        height: 105px;
+        width: 110px;
+        height: 110px;
       }
 
       .hero h1 {
@@ -1213,7 +1283,17 @@
       }
 
       .hero-welcome {
-        font-size: 13px;
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .hero-buttons {
+        gap: 10px;
+      }
+
+      .hero-buttons .btn {
+        padding: 13px 17px;
+        font-size: 12px;
       }
 
       .time-panel {
@@ -1346,45 +1426,7 @@
   <section class="hero" id="home">
     <div class="container hero-content">
 
-      <div class="hero-main">
-        <div class="hero-tag">
-          PROFESSIONAL AIR CONDITIONING SERVICES
-        </div>
-
-        <img class="hero-logo"
-             src="techvibe-logo.png"
-             alt="TechVibe Cooling Solutions Original Logo">
-
-        <h1>
-          TechVibe<br>
-          <span class="blue">Cooling</span>
-          <span class="orange">Solutions</span>
-        </h1>
-
-        <p class="hero-subtitle">
-          Professional A/C Installation, Repair, Cleaning,
-          Gas Refill and Maintenance Services in Colombo 5,
-          Narahenpita, Sri Lanka.
-        </p>
-
-        <p class="hero-welcome">
-          Your Comfort Is Our Priority!
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#booking" class="btn btn-primary">
-            BOOK A SERVICE
-          </a>
-
-          <a href="https://wa.me/94787708831"
-             target="_blank" rel="noopener"
-             class="btn btn-outline">
-            CHAT ON WHATSAPP
-          </a>
-        </div>
-      </div>
-
-      <!-- CLOCK AND CALENDAR -->
+      <!-- LEFT SIDE: DIGITAL CLOCK AND CALENDAR -->
       <div class="time-panel">
 
         <div class="glass-card">
@@ -1402,6 +1444,48 @@
           </div>
 
           <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT SIDE: TECHVIBE BRANDING -->
+      <div class="hero-main">
+
+        <div class="hero-tag">
+          WELCOME TO TECHVIBE
+        </div>
+
+        <!-- ORIGINAL TECHVIBE LOGO -->
+        <img class="hero-logo"
+             src="techvibe-logo.png"
+             alt="TechVibe Cooling Solutions Original Logo">
+
+        <!-- COMPANY NAME -->
+        <h1>
+          <span class="blue">TECHVIBE</span><br>
+          <span class="orange">COOLING SOLUTIONS</span>
+        </h1>
+
+        <p class="hero-welcome">
+          ඔබේ සුවපහසුව අපේ ප්‍රමුඛතාවයයි 💙
+        </p>
+
+        <p class="hero-subtitle">
+          Professional A/C Installation, Repair, Cleaning,
+          Gas Refill and Maintenance Services in Colombo 5,
+          Narahenpita, Sri Lanka.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#booking" class="btn btn-primary">
+            BOOK A SERVICE
+          </a>
+
+          <a href="https://wa.me/94787708831"
+             target="_blank" rel="noopener"
+             class="btn btn-outline">
+            WHATSAPP
+          </a>
         </div>
 
       </div>
@@ -2372,4 +2456,4 @@ Thank you!`;
   </script>
 
 </body>
-</html>
+  </html>
